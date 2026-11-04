@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const leaders = [
+  {
+    name: "Deo Cardi Nathanael",
+    role: "Founder & CEO · Creative Director",
+    desc: "Praktisi branding dan akselerator bisnis dengan pengalaman lebih dari satu dekade dalam membesarkan identitas puluhan brand nasional dan memimpin ekosistem Cardi.",
+    linkText: "Profil Lengkap →",
+    linkUrl: "https://cardi.co.id/deo-cardi-nathanael-profile/"
+  },
+  {
+    name: "Vanesha Octania",
+    role: "Creative Director & Brand Strategist",
+    desc: "Memimpin perumusan narasi kreatif, arsitektur visual, serta konsistensi desain identitas bagi portofolio klien Cardi Nusantara di berbagai industri.",
+    linkText: null,
+    linkUrl: null
+  }
+];
+
+const divisions = [
+  {
+    name: "Strategi & Brand",
+    focus: "Riset Pasar, Audit & Positioning",
+    desc: "Mengevaluasi kondisi brand melalui scoring framework 3 Pilar (Dilihat, Diingat, Dipercaya) dan merumuskan arah diferensiasi yang kokoh."
+  },
+  {
+    name: "Kreatif & Visual",
+    focus: "Identitas, Desain & Motion",
+    desc: "Menciptakan logo mark, sistem grafis, panduan visual (brand guidelines), kemasan, hingga visualisasi digital yang memikat dan konsisten."
+  },
+  {
+    name: "Digital Ads & Performance",
+    focus: "Paid Acquisition & Web Traffic",
+    desc: "Mengelola kampanye periklanan Meta, Google, dan TikTok dengan pengukuran ketat pada CAC, CTR, ROAS, serta konversi penjualan."
+  },
+  {
+    name: "KOL Management — Kriya Works",
+    focus: "Influencer & Endorsement",
+    desc: "Mengkurasi dan mengorkestrasi kolaborasi kreator konten dari nano hingga macro tier untuk memperluas jangkauan dan trust brand."
+  },
+  {
+    name: "Social Media — Inhands",
+    focus: "Konten Harian & Komunitas",
+    desc: "Merawat akun media sosial klien secara konsisten lewat perencanaan editorial, visual aesthetic, copywriting tajam, dan interaksi audiens."
+  },
+  {
+    name: "Teknologi & AI",
+    focus: "Sistem & Automasi Bisnis",
+    desc: "Mengintegrasikan channel pemasaran dengan platform teknologi Cardi Agent (ERP, CRM, dan automasi komunikasi) untuk retensi maksimal."
+  }
+];
+---
+
+<BaseLayout
+  title="Tim & Pimpinan — Cardi Nusantara"
+  description="Tim Cardi Nusantara: sekitar 37 profesional di bidang strategi, kreatif, digital ads, KOL, dan rekayasa teknologi bisnis."
+  activeNav="tim"
+>
+  <!-- HERO -->
+  <section class="hero hero-dark">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Tim Cardi Nusantara</span>
+        <h1>Sekitar 37 orang yang membangun brand setiap hari.</h1>
+        <p class="lead">
+          Strateg, kreator visual, analis performa iklan, dan insinyur teknologi bekerja berdampingan dalam satu atap untuk mengawal pertumbuhan brand Anda.
+        </p>
+        <div class="btns">
+          <a class="btn btn-primary" href="/brief">Kirim Brief</a>
+          <a class="btn btn-outline" href="https://cardi.co.id/karier/" target="_blank" rel="noopener">Karier di Cardi</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEPEMIMPINAN -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Kepemimpinan</span>
+        <h2>Para pemimpin di balik visi kami.</h2>
+        <p class="lead">Kombinasi antara wawasan bisnis strategis dan kecintaan mendalam pada kualitas keahlian desain.</p>
+      </div>
+
+      <div class="grid g2">
+        {leaders.map(leader => (
+          <article class="card" style="padding:32px;">
+            <div class="card-top">
+              <span class="tag gold">Leadership</span>
+            </div>
+            <h3 style="font-size:24px;margin-bottom:4px;">{leader.name}</h3>
+            <div style="font-size:14px;font-weight:700;color:var(--gold-ink);margin-bottom:12px;">{leader.role}</div>
+            <p style="color:var(--ink-2);font-size:15px;line-height:1.6;">{leader.desc}</p>
+            {leader.linkUrl && (
+              <a class="card-link" href={leader.linkUrl} target="_blank" rel="noopener" style="margin-top:20px;">
+                {leader.linkText}
+              </a>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVISI OPERASIONAL -->
+  <section class="sec sec-white">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Struktur Kerja</span>
+        <h2>Divisi khusus untuk setiap sentuhan brand.</h2>
+        <p class="lead">Kami membagi spesialisasi secara tajam agar setiap aspek eksekusi dijalankan oleh talenta terbaik di bidangnya.</p>
+      </div>
+
+      <div class="grid g3">
+        {divisions.map(div => (
+          <article class="card">
+            <div class="card-top">
+              <span class="tag">{div.focus}</span>
+            </div>
+            <h3 style="font-size:20px;">{div.name}</h3>
+            <p>{div.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Ingin berkolaborasi atau bergabung bersama kami?</h2>
+          <p>Kami selalu membuka pintu bagi talenta berdedikasi tinggi dan mitra bisnis visioner.</p>
+        </div>
+        <div class="btns">
+          <a class="btn btn-light" href="https://cardi.co.id/karier/" target="_blank" rel="noopener">Lihat Lowongan Kerja</a>
+          <a class="btn btn-ghost-light" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Nusantara%2C%20saya%20ingin%20berkenalan%20dengan%20tim." target="_blank" rel="noopener">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

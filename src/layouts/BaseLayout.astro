@@ -1,0 +1,82 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonical?: string;
+  activeNav?: string;
+}
+
+const {
+  title = 'Cardi Nusantara — Branding, Digital, GTM & IPO Partner',
+  description = 'Cardi Nusantara: tim ahli branding, digital marketing, go-to-market, dan IPO Partner. Membuat brand dilihat, diingat, dipercaya.',
+  ogImage = '/logos/nusantara/logo-nusantara-dark.png',
+  canonical = Astro.url.href,
+  activeNav = ''
+} = Astro.props;
+
+import '../styles/global.css';
+import EcoNav from '../components/EcoNav.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const WA_FLOAT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Nusantara%2C%20saya%20ingin%20tanya.';
+---
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/logos/nusantara/icon-nusantara.png" />
+  <link rel="apple-touch-icon" href="/logos/nusantara/icon-nusantara.png" />
+
+  <!-- Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="t-nus">
+  <a class="skip" href="#main">Lewati ke konten</a>
+  
+  <EcoNav />
+  <Navbar activeNav={activeNav} />
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <Footer />
+
+  <!-- WhatsApp Floating Button -->
+  <a 
+    class="wa-float" 
+    href={WA_FLOAT} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    aria-label="Chat WhatsApp Cardi Nusantara"
+  >
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"></path>
+    </svg>
+  </a>
+</body>
+</html>

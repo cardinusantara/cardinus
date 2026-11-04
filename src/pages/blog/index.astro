@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout 
+  title="Blog & Insight — Strategi Brand, Digital & Bisnis Indonesia | Cardi Nusantara"
+  description="Artikel, panduan, dan riset pasar mengenai branding, marketing digital, strategi ekspansi pasar, dan kesiapan IPO untuk bisnis di Indonesia."
+  activeNav="blog"
+>
+  <section class="blog-hero">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Insight &amp; Panduan</span>
+        <h1>Strategi brand, pasar, dan pertumbuhan bisnis.</h1>
+        <p class="lead">
+          Kumpulan analisis mendalam dari tim praktisi Cardi Nusantara mengenai branding, strategi go-to-market, digital marketing, hingga kesiapan bursa.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-white">
+    <div class="wrap">
+      <div class="grid g3">
+        {sortedPosts.map((post) => (
+          <ArticleCard 
+            title={post.data.title}
+            description={post.data.description}
+            pubDate={post.data.pubDate}
+            slug={post.slug}
+            cover={post.data.cover}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Siap mengembangkan brand Anda?</h2>
+          <p>Diskusikan target ekspansi dan strategi brand bersama tim ahli Cardi Nusantara.</p>
+        </div>
+        <div class="btns">
+          <a class="btn btn-light" href="/brief">Kirim brief proyek</a>
+          <a class="btn btn-ghost-light" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Nusantara%2C%20saya%20ingin%20diskusi%20proyek." target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-hero {
+    padding: 72px 0 48px;
+    background: var(--bg);
+  }
+</style>

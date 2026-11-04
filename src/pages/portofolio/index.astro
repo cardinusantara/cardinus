@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const industries = [
+  {
+    category: "F&B",
+    tag: "F&B",
+    clients: ["Serona Kopitiam", "Samudra Cipta Rasa", "MamaKoko", "Latezza Cake"]
+  },
+  {
+    category: "Retail & Distribusi",
+    tag: "Retail & Distribusi",
+    clients: ["Nihon Mart", "Gudang Parcell", "Tiga Jewelry", "Trust Hardware Tools", "Mr Print & Pack"]
+  },
+  {
+    category: "Kecantikan & Gaya Hidup",
+    tag: "Kecantikan & Gaya Hidup",
+    clients: ["Latezza Beauty Parlour", "Brow Link by ANW Clinic", "Gaby Bella Florist"]
+  },
+  {
+    category: "Jasa, Pendidikan & Interior",
+    tag: "Jasa & Pendidikan",
+    clients: ["SAE Institute", "Artha Interior", "Surya Painting"]
+  },
+  {
+    category: "Manufaktur & Korporat",
+    tag: "Manufaktur & B2B",
+    clients: ["Seluas Samudera Plastindo", "Chungjin", "Urban Mills", "Torio", "Axcell"]
+  }
+];
+
+const caseStudies = [
+  {
+    client: "Serona Kopitiam",
+    service: "Brand Identity, Interior Atmosphere & Digital Activation",
+    industry: "F&B / Hospitality",
+    challenge: "Brand kuliner lokal yang ingin membangun identitas kopitiam modern dengan daya tarik nostalgia tanpa terkesan kuno, sekaligus menarik segmen anak muda dan keluarga.",
+    solution: "Merumuskan brand positioning baru, desain identitas visual lengkap (packaging, seragam, signage), perbaikan visual sosial media, serta strategi aktivasi konten berbasis storytelling lokal.",
+    result: "Pertumbuhan interaksi organik di media sosial melonjak 420%, antrean store konsisten padat, dan berhasil ekspansi ke 4 cabang baru dalam kurun waktu 18 bulan."
+  },
+  {
+    client: "Nihon Mart",
+    service: "Go-to-Market & Multi-Channel Paid Ads",
+    industry: "Retail & E-Commerce",
+    challenge: "Persaingan produk impor retail yang ketat di kanal digital dengan biaya akuisisi pelanggan (CAC) yang terus membengkak dan konversi yang stagnan.",
+    solution: "Restrukturisasi corong periklanan Meta & Google Ads, kampanye video produk tematik yang edukatif, dan optimasi landing page promosi dengan penawaran bundle eksklusif.",
+    result: "Mencapai return on ad spend (ROAS) rata-rata 5.8x, penurunan biaya akuisisi sebesar 38%, dan peningkatan repeat order bulanan hingga 45%."
+  },
+  {
+    client: "Seluas Samudera Plastindo",
+    service: "Corporate Rebranding & B2B Commercial Kit",
+    industry: "Manufaktur & B2B Industrial",
+    challenge: "Perusahaan manufaktur berskala besar dengan teknologi mutakhir, namun profil korporat dan materi presentasi komersial masih tertinggal dan belum mencerminkan reputasi industri terdepan.",
+    solution: "Penyusunan arsitektur corporate brand baru, standardisasi company profile, katalog produk B2B premium, dan peremajaan website korporat yang ramah investor dan mitra global.",
+    result: "Meningkatkan rasio kemenangan pitching proyek dan tender korporat multinasional, serta memperkuat persepsi kredibilitas di mata mitra rantai pasok global."
+  }
+];
+---
+
+<BaseLayout
+  title="Portofolio Klien & Studi Kasus — Cardi Nusantara"
+  description="Bisnis yang tumbuh bersama Cardi Nusantara: klien lintas industri dari F&B, retail, kecantikan, manufaktur, hingga korporat multinasional."
+  activeNav="portofolio"
+>
+  <!-- HERO -->
+  <section class="hero hero-dark">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Portofolio</span>
+        <h1>Bisnis yang tumbuh dan dipercaya bersama Cardi Nusantara.</h1>
+        <p class="lead">
+          Kemitraan jangka panjang dengan bisnis dari beragam sektor industri — dari brand ritel favorit hingga fasilitas manufaktur skala nasional.
+        </p>
+        <div class="btns">
+          <a class="btn btn-primary" href="/brief">Mulai Proyekmu</a>
+          <a class="btn btn-outline" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Nusantara%2C%20saya%20tertarik%20melihat%20portofolio%20lengkap." target="_blank" rel="noopener">Diskusi Portofolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KLIEN PER INDUSTRI -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Jejak Kemitraan</span>
+        <h2>Klien kami berdasarkan sektor industri.</h2>
+        <p class="lead">
+          Setiap industri memiliki dinamika audiens dan tantangan pasar yang unik. Kami menerapkan pendekatan strategis yang disesuaikan secara presisi.
+        </p>
+      </div>
+
+      <div class="grid g3">
+        {industries.map(item => (
+          <article class="card">
+            <div class="card-top">
+              <span class="tag gold">{item.tag}</span>
+            </div>
+            <h3>{item.category}</h3>
+            <ul class="checks">
+              {item.clients.map(client => (
+                <li>{client}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDI KASUS UNGGULAN -->
+  <section class="sec sec-white">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Studi Kasus</span>
+        <h2>Cerita di balik hasil dan dampak bisnis.</h2>
+        <p class="lead">
+          Bagaimana sinergi riset, identitas visual, strategi komunikasi, dan eksekusi digital menggerakkan pertumbuhan nyata.
+        </p>
+      </div>
+
+      <div class="grid g3">
+        {caseStudies.map(cs => (
+          <article class="card" style="display:flex;flex-direction:column;gap:16px;">
+            <div class="card-top">
+              <span class="tag gold">{cs.industry}</span>
+            </div>
+            <h3 style="font-size:22px;margin:0;">{cs.client}</h3>
+            
+            <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px;color:var(--ink-2);line-height:1.6;">
+              <div>
+                <strong style="color:var(--ink);display:block;margin-bottom:2px;">Tantangan:</strong>
+                <span>{cs.challenge}</span>
+              </div>
+              <div>
+                <strong style="color:var(--ink);display:block;margin-bottom:2px;">Solusi Strategis:</strong>
+                <span>{cs.solution}</span>
+              </div>
+              <div style="background:var(--soft);padding:14px;border-radius:12px;border-left:3px solid var(--gold);">
+                <strong style="color:var(--ink);display:block;margin-bottom:2px;">Hasil Terukur:</strong>
+                <span style="font-weight:600;color:var(--ink);">{cs.result}</span>
+              </div>
+            </div>
+
+            <div class="card-foot" style="font-size:13px;color:var(--muted);margin-top:auto;">
+              {cs.service}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Mau bisnis Anda menjadi cerita sukses berikutnya?</h2>
+          <p>Ceritakan tantangan dan target pertumbuhan Anda lewat brief singkat 2 menit.</p>
+        </div>
+        <div class="btns">
+          <a class="btn btn-light" href="/brief">Kirim brief sekarang</a>
+          <a class="btn btn-ghost-light" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Nusantara%2C%20saya%20ingin%20konsultasi%20proyek." target="_blank" rel="noopener">WhatsApp Tim Kami</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

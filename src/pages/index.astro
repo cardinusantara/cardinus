@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const clients = [
+  'Serona Kopitiam', 'Samudra Cipta Rasa', 'MamaKoko', 'Latezza Cake',
+  'Nihon Mart', 'Gudang Parcell', 'Tiga Jewelry', 'Trust Hardware Tools',
+  'Mr Print & Pack', 'Latezza Beauty Parlour', 'Brow Link by ANW Clinic',
+  'Gaby Bella Florist', 'SAE Institute', 'Artha Interior', 'Surya Painting',
+  'Seluas Samudera Plastindo', 'Chungjin', 'Urban Mills', 'Torio', 'Axcell'
+];
+
+const posts = await getCollection('blog');
+const latestPosts = posts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout
+  title="Cardi Nusantara — Branding, Digital, GTM & IPO Partner"
+  description="Cardi Nusantara: tim ahli branding, digital marketing, go-to-market, dan IPO Partner. Membuat brand dilihat, diingat, dipercaya."
+  activeNav=""
+>
+  <!-- HERO SECTION -->
+  <section class="hero hero-dark">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Cardi Nusantara · Tim ahli</span>
+        <h1>Membuat brand dilihat, diingat, dipercaya.</h1>
+        <p class="lead">
+          Tim strategi dan kreatif untuk branding, digital, go-to-market, dan kesiapan IPO. Bagian dari ekosistem Cardi.
+        </p>
+        <div class="btns">
+          <a class="btn btn-primary" href="/brief">Kirim brief</a>
+          <a class="btn btn-outline" href="https://cardi.co.id/cek-brand/" target="_blank" rel="noopener">Cek brand gratis &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 PILAR LAYANAN -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Layanan</span>
+        <h2>Empat layanan, satu tujuan: brand yang dipercaya.</h2>
+      </div>
+      <div class="grid g4">
+        <!-- 01. Branding -->
+        <article class="card">
+          <div class="card-top">
+            <span class="num">01</span>
+          </div>
+          <h3>Branding</h3>
+          <p>Strategi, positioning, identitas visual & verbal, dan brand guideline.</p>
+          <a class="card-link" href="/branding">Selengkapnya &rarr;</a>
+        </article>
+
+        <!-- 02. Digital -->
+        <article class="card">
+          <div class="card-top">
+            <span class="num">02</span>
+          </div>
+          <h3>Digital</h3>
+          <p>Konten, social media, Meta & Google Ads, SEO, dan laporan performa.</p>
+          <a class="card-link" href="/digital">Selengkapnya &rarr;</a>
+        </article>
+
+        <!-- 03. Go-to-Market -->
+        <article class="card">
+          <div class="card-top">
+            <span class="num">03</span>
+          </div>
+          <h3>Go-to-Market</h3>
+          <p>Riset pasar, positioning, rencana channel, dan peluncuran produk.</p>
+          <a class="card-link" href="/gtm">Selengkapnya &rarr;</a>
+        </article>
+
+        <!-- 04. IPO Partner -->
+        <article class="card">
+          <div class="card-top">
+            <span class="num">04</span>
+          </div>
+          <h3>IPO Partner</h3>
+          <p>Menyiapkan branding, marketing, sales, dan sistem IT bisnis menuju IPO.</p>
+          <a class="card-link" href="/ipo-partner">Selengkapnya &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND CHECK UP AUDIT -->
+  <section class="sec sec-white">
+    <div class="wrap">
+      <div class="split">
+        <div class="prose">
+          <span class="eyebrow">Brand Check Up</span>
+          <h2 style="font-size:36px;color:var(--ink);">Mulai dari diagnosis yang jujur.</h2>
+          <p>
+            Audit brand menyeluruh dalam 3 pilar — Dilihat, Diingat, Dipercaya — lengkap dengan rekomendasi strategis dan rencana aksi.
+          </p>
+          <p>
+            <strong style="color:var(--ink);">Rp 5.000.000 — atau gratis dalam 7 hari.</strong>
+          </p>
+          <div class="btns">
+            <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Nusantara%2C%20saya%20ingin%20Brand%20Check%20Up." target="_blank" rel="noopener">
+              Jadwalkan Discovery Session
+            </a>
+            <a class="btn btn-outline" href="https://cardi.co.id/cek-brand/" target="_blank" rel="noopener">
+              Coba cek mandiri &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="table-wrap">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th scope="col">Pilar</th>
+                  <th scope="col">Yang dinilai</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Dilihat — Visibility</th>
+                  <td>Brand visibility · Market presence · Channel coverage · Awareness level</td>
+                </tr>
+                <tr>
+                  <th scope="row">Diingat — Memorable</th>
+                  <td>Brand identity · Visual coherence · Message clarity · Differentiation</td>
+                </tr>
+                <tr>
+                  <th scope="row">Dipercaya — Trusted</th>
+                  <td>Reputation score · Customer perception · Brand authenticity · Competitive position</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIPERCAYA OLEH -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Dipercaya oleh</span>
+        <h2>Bisnis yang tumbuh bersama kami.</h2>
+        <p class="lead">Dari F&B, retail, kecantikan, pendidikan, sampai manufaktur.</p>
+      </div>
+      <div class="pill-row">
+        {clients.map(c => (
+          <span class="pill">{c}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CARA KERJA -->
+  <section class="sec sec-dark">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Cara kerja</span>
+        <h2>Dari diagnosis sampai penjualan.</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="step-n">01</span>
+          <div>
+            <h3>Discovery Session</h3>
+            <p>Kami dengarkan tujuan, masalah, dan kondisi bisnis secara mendalam.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-n">02</span>
+          <div>
+            <h3>Audit 3 pilar</h3>
+            <p>Brand dinilai objektif dari sisi dilihat, diingat, dan dipercaya.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-n">03</span>
+          <div>
+            <h3>Strategi & eksekusi</h3>
+            <p>Identitas, konten, kampanye iklan, dan rencana masuk pasar.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-n">04</span>
+          <div>
+            <h3>Sistem penjualan</h3>
+            <p>Brand yang siap dilanjutkan dengan ekosistem Cardi Agent AI.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- LATEST ARTICLES / INSIGHT -->
+  <section class="sec sec-white">
+    <div class="wrap">
+      <div class="sec-head" style="display:flex;flex-direction:row;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;">
+        <div>
+          <span class="eyebrow">Insight &amp; Artikel</span>
+          <h2>Panduan &amp; Analisis Pertumbuhan Bisnis.</h2>
+          <p class="lead">Strategi praktis riset pasar, periklanan, dan ekspansi bisnis di pasar Indonesia.</p>
+        </div>
+        <a class="btn btn-outline btn-sm" href="/blog">Lihat Semua 30 Artikel &rarr;</a>
+      </div>
+      <div class="grid g3">
+        {latestPosts.map(post => (
+          <ArticleCard 
+            title={post.data.title}
+            description={post.data.description}
+            pubDate={post.data.pubDate}
+            slug={post.slug}
+            cover={post.data.cover}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Punya proyek brand?</h2>
+          <p>Kirim brief singkat — kami balas dengan langkah pertama yang jelas.</p>
+        </div>
+        <div class="btns">
+          <a class="btn btn-light" href="/brief">Kirim brief</a>
+          <a class="btn btn-ghost-light" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Nusantara%2C%20saya%20ingin%20diskusi%20proyek." target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 88px 0 72px;
+  }
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    max-width: 860px;
+  }
+  .hero h1 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+  }
+</style>

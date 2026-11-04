@@ -1,0 +1,391 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formattedDate = new Intl.DateTimeFormat('id-ID', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+}).format(post.data.pubDate);
+
+const canonicalUrl = `https://cardinusantara.com/${post.slug}`;
+const shareUrl = encodeURIComponent(canonicalUrl);
+const shareTitle = encodeURIComponent(post.data.title);
+
+// JSON-LD Structured Data
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  'headline': post.data.title,
+  'description': post.data.description,
+  'image': post.data.cover || 'https://cardinusantara.com/logos/nusantara/logo-nusantara-dark.png',
+  'datePublished': post.data.pubDate.toISOString(),
+  'author': {
+    '@type': 'Organization',
+    'name': 'Cardi Nusantara',
+    'url': 'https://cardinusantara.com'
+  },
+  'publisher': {
+    '@type': 'Organization',
+    'name': 'Cardi Nusantara',
+    'logo': {
+      '@type': 'ImageObject',
+      'url': 'https://cardinusantara.com/logos/nusantara/icon-nusantara.png'
+    }
+  },
+  'mainEntityOfPage': {
+    '@type': 'WebPage',
+    '@id': canonicalUrl
+  }
+};
+---
+
+<BaseLayout
+  title={`${post.data.title} — Cardi Nusantara`}
+  description={post.data.description}
+  ogImage={post.data.cover}
+  canonical={canonicalUrl}
+  activeNav="blog"
+>
+  <!-- JSON-LD Injection -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <article class="article-page">
+    <div class="wrap article-wrap">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Beranda</a>
+        <span class="bc-sep">/</span>
+        <a href="/blog">Blog</a>
+        <span class="bc-sep">/</span>
+        <span class="bc-current" aria-current="page">{post.data.title}</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="article-header">
+        <span class="eyebrow">Insight &amp; Panduan</span>
+        <h1 class="article-main-title">{post.data.title}</h1>
+        
+        <div class="article-byline">
+          <span class="byline-author">Oleh <b>{post.data.author || 'Cardi Nusantara'}</b></span>
+          <span class="byline-sep">·</span>
+          <time datetime={post.data.pubDate.toISOString()}>{formattedDate}</time>
+        </div>
+      </header>
+
+      <!-- Featured Image Banner -->
+      {post.data.cover && (
+        <div class="article-featured-media">
+          <img 
+            src={post.data.cover} 
+            alt={post.data.title} 
+            class="featured-img" 
+            onerror="this.style.display='none'"
+          />
+        </div>
+      )}
+
+      <!-- Article Body (Rendered HTML Content) -->
+      <div class="prose article-body">
+        <Content />
+      </div>
+
+      <!-- Share & Discussion Band -->
+      <div class="article-share-strip">
+        <span class="share-label">Bagikan artikel:</span>
+        <div class="share-links">
+          <a 
+            href={`https://wa.me/?text=${shareTitle}%20${shareUrl}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="share-btn share-wa"
+          >
+            WhatsApp
+          </a>
+          <a 
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="share-btn share-li"
+          >
+            LinkedIn
+          </a>
+          <a 
+            href={`https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="share-btn share-tw"
+          >
+            Twitter / X
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Consultation Box -->
+      <div class="article-cta-box">
+        <div class="cta-box-copy">
+          <h3>Ingin Menerapkan Strategi Ini Pada Bisnis Anda?</h3>
+          <p>
+            Konsultasikan rencana branding, ekspansi pasar, atau kesiapan IPO Anda langsung dengan tim ahli Cardi Nusantara.
+          </p>
+        </div>
+        <div class="cta-box-actions">
+          <a class="btn btn-primary" href="/brief">Kirim Brief Proyek</a>
+          <a class="btn btn-outline" href="https://cardi.co.id/cek-brand/" target="_blank" rel="noopener">Cek Kondisi Brand Gratis</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .article-page {
+    padding: 48px 0 80px;
+    background: var(--bg);
+  }
+
+  .article-wrap {
+    max-width: 820px;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--muted);
+    font-family: var(--mono);
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--ink);
+  }
+
+  .bc-sep {
+    opacity: 0.5;
+  }
+
+  .bc-current {
+    color: var(--ink);
+    font-weight: 600;
+    max-width: 320px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Header */
+  .article-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .article-main-title {
+    font-size: clamp(28px, 4.5vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+
+  .article-byline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--muted);
+    font-family: var(--mono);
+  }
+
+  .byline-author b {
+    color: var(--ink);
+  }
+
+  .byline-sep {
+    opacity: 0.4;
+  }
+
+  /* Featured Image */
+  .article-featured-media {
+    margin-bottom: 36px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--soft);
+    border: 1px solid var(--line);
+  }
+
+  .featured-img {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: cover;
+  }
+
+  /* Body Content Styles */
+  .article-body {
+    font-size: 17.5px;
+    line-height: 1.75;
+    color: var(--ink-2);
+  }
+
+  :global(.article-body h2) {
+    font-size: 26px;
+    margin-top: 36px;
+    margin-bottom: 14px;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  :global(.article-body h3) {
+    font-size: 21px;
+    margin-top: 28px;
+    margin-bottom: 12px;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+  }
+
+  :global(.article-body p) {
+    margin-bottom: 20px;
+  }
+
+  :global(.article-body ul),
+  :global(.article-body ol) {
+    margin-bottom: 24px;
+    padding-left: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  :global(.article-body li) {
+    line-height: 1.65;
+  }
+
+  :global(.article-body img) {
+    border-radius: 12px;
+    margin: 28px auto;
+    border: 1px solid var(--line);
+  }
+
+  :global(.article-body table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 15px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  :global(.article-body th),
+  :global(.article-body td) {
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    text-align: left;
+  }
+
+  :global(.article-body th) {
+    background: var(--soft);
+    font-weight: 700;
+  }
+
+  /* Share Strip */
+  .article-share-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    margin-top: 48px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .share-label {
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+
+  .share-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .share-btn {
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    transition: all 0.15s ease;
+  }
+
+  .share-btn:hover {
+    border-color: var(--ink);
+    background: var(--soft);
+  }
+
+  /* Bottom CTA Box */
+  .article-cta-box {
+    margin-top: 48px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cta-box-copy h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  .cta-box-copy p {
+    font-size: 15.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .cta-box-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media (max-width: 640px) {
+    .article-cta-box {
+      padding: 24px;
+    }
+  }
+</style>
