@@ -14,21 +14,23 @@ const sortedPosts = allPosts.sort(
   description="Artikel, panduan, dan riset pasar mengenai branding, marketing digital, strategi ekspansi pasar, dan kesiapan IPO untuk bisnis di Indonesia."
   activeNav="blog"
 >
-  <section class="blog-hero">
+  <section class="section soft" style="padding: 80px 0 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
     <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">Insight &amp; Panduan</span>
-        <h1>Strategi brand, pasar, dan pertumbuhan bisnis.</h1>
-        <p class="lead">
+      <div class="section-head center">
+        <div class="eyebrow">// Insight &amp; Panduan</div>
+        <h1 style="font-size: clamp(32px, 5vw, 54px); margin: 16px 0 20px; line-height: 1.15;">
+          Strategi Brand, Pasar, dan Pertumbuhan.
+        </h1>
+        <p class="lead" style="max-width: 720px; margin: 0 auto;">
           Kumpulan analisis mendalam dari tim praktisi Cardi Nusantara mengenai branding, strategi go-to-market, digital marketing, hingga kesiapan bursa.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="sec sec-white">
+  <section class="section">
     <div class="wrap">
-      <div class="grid g3">
+      <div class="grid cols-3" style="gap: 24px;">
         {sortedPosts.map((post) => (
           <ArticleCard 
             title={post.data.title}
@@ -42,25 +44,17 @@ const sortedPosts = allPosts.sort(
     </div>
   </section>
 
-  <section class="sec">
-    <div class="wrap">
-      <div class="cta-band">
-        <div>
-          <h2>Siap mengembangkan brand Anda?</h2>
-          <p>Diskusikan target ekspansi dan strategi brand bersama tim ahli Cardi Nusantara.</p>
-        </div>
-        <div class="btns">
-          <a class="btn btn-light" href="/brief">Kirim brief proyek</a>
-          <a class="btn btn-ghost-light" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Nusantara%2C%20saya%20ingin%20diskusi%20proyek." target="_blank" rel="noopener">WhatsApp</a>
-        </div>
+  <section class="cta-sec" style="margin: 60px 0 0;">
+    <div class="wrap inner">
+      <div class="cta-card" style="text-align: center; max-width: 800px; margin: 0 auto; padding: 60px 24px;">
+        <h2>Siap Mengembangkan Brand Anda?</h2>
+        <p class="lead" style="margin: 16px auto 28px;">
+          Diskusikan target ekspansi dan strategi brand bersama tim ahli Cardi Nusantara.
+        </p>
+        <a class="btn btn-lg btn-red" href="https://wa.me/62817449760?text=Halo%20Cardi%20Nusantara%21%20Saya%20ingin%20terhubung%20%2F%20konsultasi." rel="noopener" target="_blank">
+          Hubungi via WhatsApp
+        </a>
       </div>
     </div>
   </section>
 </BaseLayout>
-
-<style>
-  .blog-hero {
-    padding: 72px 0 48px;
-    background: var(--bg);
-  }
-</style>

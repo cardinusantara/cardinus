@@ -3,14 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import { getCollection } from 'astro:content';
 
-const clients = [
-  'Serona Kopitiam', 'Samudra Cipta Rasa', 'MamaKoko', 'Latezza Cake',
-  'Nihon Mart', 'Gudang Parcell', 'Tiga Jewelry', 'Trust Hardware Tools',
-  'Mr Print & Pack', 'Latezza Beauty Parlour', 'Brow Link by ANW Clinic',
-  'Gaby Bella Florist', 'SAE Institute', 'Artha Interior', 'Surya Painting',
-  'Seluas Samudera Plastindo', 'Chungjin', 'Urban Mills', 'Torio', 'Axcell'
-];
-
 const posts = await getCollection('blog');
 const latestPosts = posts
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -18,242 +10,1940 @@ const latestPosts = posts
 ---
 
 <BaseLayout
-  title="Cardi Nusantara — Branding, Digital, GTM & IPO Partner"
-  description="Cardi Nusantara: tim ahli branding, digital marketing, go-to-market, dan IPO Partner. Membuat brand dilihat, diingat, dipercaya."
-  activeNav=""
+  title="Cardi Nusantara | Perusahaan Go-To-Market - Bangun Brand - Cardi GTM Matrix™"
+  description="We generate leads. We build brands. We close markets. Full closed-loop GTM system dari lead pertama sampai penjualan pertama."
+  activeNav="home"
 >
-  <!-- HERO SECTION -->
-  <section class="hero hero-dark">
-    <div class="wrap">
-      <div class="hero-copy">
-        <span class="eyebrow">Cardi Nusantara · Tim ahli</span>
-        <h1>Membuat brand dilihat, diingat, dipercaya.</h1>
-        <p class="lead">
-          Tim strategi dan kreatif untuk branding, digital, go-to-market, dan kesiapan IPO. Bagian dari ekosistem Cardi.
-        </p>
-        <div class="btns">
-          <a class="btn btn-primary" href="/brief">Kirim brief</a>
-          <a class="btn btn-outline" href="https://cardi.co.id/cek-brand/" target="_blank" rel="noopener">Cek brand gratis &rarr;</a>
-        </div>
-      </div>
+<main class="site-main" id="content">
+ <!-- HERO SECTION -->
+ <section class="hero-cn" id="hero">
+  <div aria-hidden="true" class="hero-media">
+   <video autoplay="" loop="" muted="" playsinline="" poster="https://cardinusantara.com/wp-content/uploads/2026/01/people-taking-part-business-event.jpg">
+    <source src="https://cardinusantara.com/wp-content/uploads/2026/01/WhatsApp-Video-2026-01-21-at-4.44.45-PM.mp4" type="video/mp4"/>
+   </video>
+   <div class="hero-overlay">
+   </div>
+  </div>
+  <div class="hero-content">
+   <div class="wrap">
+    <div class="eyebrow" style="color:#ff9070">
+     Indonesia's Go-To-Market Partner
     </div>
-  </section>
-
-  <!-- 4 PILAR LAYANAN -->
-  <section class="sec">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">Layanan</span>
-        <h2>Empat layanan, satu tujuan: brand yang dipercaya.</h2>
-      </div>
-      <div class="grid g4">
-        <!-- 01. Branding -->
-        <article class="card">
-          <div class="card-top">
-            <span class="num">01</span>
-          </div>
-          <h3>Branding</h3>
-          <p>Strategi, positioning, identitas visual & verbal, dan brand guideline.</p>
-          <a class="card-link" href="/branding">Selengkapnya &rarr;</a>
-        </article>
-
-        <!-- 02. Digital -->
-        <article class="card">
-          <div class="card-top">
-            <span class="num">02</span>
-          </div>
-          <h3>Digital</h3>
-          <p>Konten, social media, Meta & Google Ads, SEO, dan laporan performa.</p>
-          <a class="card-link" href="/digital">Selengkapnya &rarr;</a>
-        </article>
-
-        <!-- 03. Go-to-Market -->
-        <article class="card">
-          <div class="card-top">
-            <span class="num">03</span>
-          </div>
-          <h3>Go-to-Market</h3>
-          <p>Riset pasar, positioning, rencana channel, dan peluncuran produk.</p>
-          <a class="card-link" href="/gtm">Selengkapnya &rarr;</a>
-        </article>
-
-        <!-- 04. IPO Partner -->
-        <article class="card">
-          <div class="card-top">
-            <span class="num">04</span>
-          </div>
-          <h3>IPO Partner</h3>
-          <p>Menyiapkan branding, marketing, sales, dan sistem IT bisnis menuju IPO.</p>
-          <a class="card-link" href="/ipo-partner">Selengkapnya &rarr;</a>
-        </article>
-      </div>
+    <h1>
+     We generate leads.
+     <br/>
+     We build brands.
+     <br/>
+     We close markets.
+    </h1>
+    <p class="lead">
+     Full closed-loop GTM system — dari lead pertama sampai penjualan pertama, tanpa celah, tanpa hand-off yang hilang.
+    </p>
+    <div class="hero-actions">
+     <a class="btn btn-lg btn-red" href="https://wa.me/62817449760?text=Halo%20Cardi%20Nusantara%21%20Saya%20ingin%20terhubung%20%2F%20konsultasi." rel="noopener" target="_blank">
+      Start Your GTM
+     </a>
+     <a class="btn btn-lg btn-ghost" href="#loop">
+      Lihat Sistem
+     </a>
     </div>
-  </section>
-
-  <!-- BRAND CHECK UP AUDIT -->
-  <section class="sec sec-white">
-    <div class="wrap">
-      <div class="split">
-        <div class="prose">
-          <span class="eyebrow">Brand Check Up</span>
-          <h2 style="font-size:36px;color:var(--ink);">Mulai dari diagnosis yang jujur.</h2>
-          <p>
-            Audit brand menyeluruh dalam 3 pilar — Dilihat, Diingat, Dipercaya — lengkap dengan rekomendasi strategis dan rencana aksi.
-          </p>
-          <p>
-            <strong style="color:var(--ink);">Rp 5.000.000 — atau gratis dalam 7 hari.</strong>
-          </p>
-          <div class="btns">
-            <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Nusantara%2C%20saya%20ingin%20Brand%20Check%20Up." target="_blank" rel="noopener">
-              Jadwalkan Discovery Session
-            </a>
-            <a class="btn btn-outline" href="https://cardi.co.id/cek-brand/" target="_blank" rel="noopener">
-              Coba cek mandiri &rarr;
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <div class="table-wrap">
-            <table class="tbl">
-              <thead>
-                <tr>
-                  <th scope="col">Pilar</th>
-                  <th scope="col">Yang dinilai</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Dilihat — Visibility</th>
-                  <td>Brand visibility · Market presence · Channel coverage · Awareness level</td>
-                </tr>
-                <tr>
-                  <th scope="row">Diingat — Memorable</th>
-                  <td>Brand identity · Visual coherence · Message clarity · Differentiation</td>
-                </tr>
-                <tr>
-                  <th scope="row">Dipercaya — Trusted</th>
-                  <td>Reputation score · Customer perception · Brand authenticity · Competitive position</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+    <div class="hero-meta">
+     <span>
+      <b>
+       10+
+      </b>
+      tahun experience
+     </span>
+     <span>
+      <b>
+       500+
+      </b>
+      leads delivered
+     </span>
+     <span>
+      <b>
+       6
+      </b>
+      unit ekosistem
+     </span>
     </div>
-  </section>
-
-  <!-- DIPERCAYA OLEH -->
-  <section class="sec">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">Dipercaya oleh</span>
-        <h2>Bisnis yang tumbuh bersama kami.</h2>
-        <p class="lead">Dari F&B, retail, kecantikan, pendidikan, sampai manufaktur.</p>
-      </div>
-      <div class="pill-row">
-        {clients.map(c => (
-          <span class="pill">{c}</span>
-        ))}
-      </div>
+   </div>
+  </div>
+ </section>
+ <!-- MARQUEE TICKER -->
+ <div aria-hidden="true" class="marquee">
+  <div class="marquee-track">
+   <span>
+    Lead
+    <b>
+     →
+    </b>
+    Brand
+    <b>
+     →
+    </b>
+    Market
+    <b>
+     →
+    </b>
+    Sold
+   </span>
+   <span>
+    Local Brand · Foreign Entry · GTM Execution
+   </span>
+   <span>
+    Lead
+    <b>
+     →
+    </b>
+    Brand
+    <b>
+     →
+    </b>
+    Market
+    <b>
+     →
+    </b>
+    Sold
+   </span>
+   <span>
+    Local Brand · Foreign Entry · GTM Execution
+   </span>
+  </div>
+ </div>
+ <!-- GTM LOOP SECTION -->
+ <section class="section dark" id="loop">
+  <div class="wrap">
+   <div class="section-head center">
+    <div class="eyebrow">
+     // Full Closed-Loop GTM
     </div>
-  </section>
-
-  <!-- CARA KERJA -->
-  <section class="sec sec-dark">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">Cara kerja</span>
-        <h2>Dari diagnosis sampai penjualan.</h2>
-      </div>
-      <ol class="steps">
-        <li>
-          <span class="step-n">01</span>
-          <div>
-            <h3>Discovery Session</h3>
-            <p>Kami dengarkan tujuan, masalah, dan kondisi bisnis secara mendalam.</p>
-          </div>
-        </li>
-        <li>
-          <span class="step-n">02</span>
-          <div>
-            <h3>Audit 3 pilar</h3>
-            <p>Brand dinilai objektif dari sisi dilihat, diingat, dan dipercaya.</p>
-          </div>
-        </li>
-        <li>
-          <span class="step-n">03</span>
-          <div>
-            <h3>Strategi & eksekusi</h3>
-            <p>Identitas, konten, kampanye iklan, dan rencana masuk pasar.</p>
-          </div>
-        </li>
-        <li>
-          <span class="step-n">04</span>
-          <div>
-            <h3>Sistem penjualan</h3>
-            <p>Brand yang siap dilanjutkan dengan ekosistem Cardi Agent AI.</p>
-          </div>
-        </li>
-      </ol>
+    <h2>
+     Dari lead pertama sampai penjualan pertama.
+    </h2>
+    <p class="lead">
+     Satu ekosistem yang menutup seluruh perjalanan — tanpa celah, tanpa vendor yang bocor.
+    </p>
+   </div>
+   <div class="loop-strip">
+    <div class="lbox idle">
+     <div class="lt">
+      LEAD
+     </div>
+     <div class="ld">
+      Demand generated
+     </div>
     </div>
-  </section>
-
-  <!-- LATEST ARTICLES / INSIGHT -->
-  <section class="sec sec-white">
-    <div class="wrap">
-      <div class="sec-head" style="display:flex;flex-direction:row;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;">
-        <div>
-          <span class="eyebrow">Insight &amp; Artikel</span>
-          <h2>Panduan &amp; Analisis Pertumbuhan Bisnis.</h2>
-          <p class="lead">Strategi praktis riset pasar, periklanan, dan ekspansi bisnis di pasar Indonesia.</p>
-        </div>
-        <a class="btn btn-outline btn-sm" href="/blog">Lihat Semua 30 Artikel &rarr;</a>
-      </div>
-      <div class="grid g3">
-        {latestPosts.map(post => (
-          <ArticleCard 
-            title={post.data.title}
-            description={post.data.description}
-            pubDate={post.data.pubDate}
-            slug={post.slug}
-            cover={post.data.cover}
-          />
-        ))}
-      </div>
+    <div class="lbox idle">
+     <div class="lt">
+      BRAND
+     </div>
+     <div class="ld">
+      Identity built
+     </div>
     </div>
-  </section>
-
-  <!-- CTA BAND -->
-  <section class="sec">
-    <div class="wrap">
-      <div class="cta-band">
-        <div>
-          <h2>Punya proyek brand?</h2>
-          <p>Kirim brief singkat — kami balas dengan langkah pertama yang jelas.</p>
-        </div>
-        <div class="btns">
-          <a class="btn btn-light" href="/brief">Kirim brief</a>
-          <a class="btn btn-ghost-light" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Nusantara%2C%20saya%20ingin%20diskusi%20proyek." target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </div>
+    <div class="lbox idle">
+     <div class="lt">
+      MARKET
+     </div>
+     <div class="ld">
+      Channels activated
+     </div>
     </div>
-  </section>
+    <div class="lbox active">
+     <div class="lt">
+      SOLD
+     </div>
+     <div class="ld">
+      Revenue on the ground
+     </div>
+    </div>
+   </div>
+   <div class="loopback">
+    ↺ Data penjualan feeds back ke lead generation — loop makin kuat setiap siklus
+   </div>
+   <div class="loop-banner">
+    <b>
+     Strategy → Branding → Digital → Commerce → Scale
+    </b>
+    —  semua di bawah satu atap, satu partner
+   </div>
+  </div>
+ </section>
+ <!-- JOURNEY / VISION SECTION -->
+ <section class="section soft reveal" id="journey">
+  <div class="wrap">
+   <div class="vision-box">
+    <div class="vision-tag">
+     Cardi Vision
+    </div>
+    <p class="vision-quote">
+     “A world where brands grow beyond selling into ecosystems owned by the public.”
+    </p>
+    <div class="journey-bar">
+     <span>
+      Idea
+     </span>
+     <span>
+      →
+     </span>
+     <span>
+      Brand
+     </span>
+     <span>
+      →
+     </span>
+     <span>
+      Product
+     </span>
+     <span>
+      →
+     </span>
+     <span class="here">
+      Go-To-Market
+     </span>
+     <span>
+      →
+     </span>
+     <span>
+      Growth
+     </span>
+     <span>
+      →
+     </span>
+     <span>
+      Investment
+     </span>
+     <span>
+      →
+     </span>
+     <span>
+      Exit/IPO
+     </span>
+    </div>
+   </div>
+   <div class="eyebrow">
+    // Cardi Ecosystem
+   </div>
+   <h2>
+    Cardi Nusantara itu apa?
+   </h2>
+   <p class="lead" style="margin:12px 0 44px;">
+    Cardi Nusantara adalah satu dari empat unit di Cardi Business Growth Ecosystem — bagian yang menjembatani brand yang sudah punya identitas, ke pasar yang siap membeli.
+   </p>
+   <div class="eco-steps">
+    <div class="eco-step">
+     <span class="step-eyebrow">
+      Step 01 · Brand Development
+     </span>
+     <h4>
+      Build the Brand
+     </h4>
+     <div class="sub">
+      Cardi Branding
+     </div>
+     <p class="d">
+      Membangun fondasi bisnis melalui brand strategy, positioning, visual identity, dan go-to-market agar brand dipercaya pasar dan siap bertumbuh.
+     </p>
+     <ul>
+      <li>
+       Brand Strategy &amp; Positioning
+      </li>
+      <li>
+       Visual Identity &amp; Go-To-Market
+      </li>
+      <li>
+       Project-Based · Build Your Brand
+      </li>
+     </ul>
+     <span class="eco-step-cta">
+      Start Brand Development
+     </span>
+    </div>
+    <div class="eco-step current">
+     <span class="here-badge">
+      You Are Here
+     </span>
+     <span class="step-eyebrow">
+      Step 02 · GTM &amp; Distribution
+     </span>
+     <h4>
+      Launch the Brand
+     </h4>
+     <div class="sub">
+      Cardi Nusantara
+     </div>
+     <p class="d">
+      Mengakselerasi ekspansi bisnis melalui distribution strategy, market penetration, partnership, franchise, dan go-to-market execution untuk memperluas jangkauan pasar.
+     </p>
+     <ul>
+      <li>
+       Distribution Strategy &amp; Market Penetration
+      </li>
+      <li>
+       Partnership &amp; Franchise
+      </li>
+      <li>
+       Growth Partnership · Launch Your Business
+      </li>
+     </ul>
+     <a class="eco-step-cta" href="https://wa.me/62817449760?text=Halo%20Cardi%20Nusantara%21%20Saya%20ingin%20terhubung%20%2F%20konsultasi." rel="noopener" target="_blank">
+      Explore Go-To-Market
+     </a>
+    </div>
+    <div class="eco-step">
+     <span class="step-eyebrow">
+      Step 03 · Integrated Growth Marketing
+     </span>
+     <h4>
+      Grow the Brand
+     </h4>
+     <div class="sub">
+      Cardi Digital
+     </div>
+     <p class="d">
+      Mengoptimalkan pertumbuhan melalui AI-powered marketing, performance growth, automation, SEO, dan revenue optimization untuk meningkatkan profit dan valuasi bisnis.
+     </p>
+     <ul>
+      <li>
+       AI-Powered Marketing &amp; Automation
+      </li>
+      <li>
+       Performance Growth, SEO &amp; Revenue Optimization
+      </li>
+      <li>
+       Growth Retainer · Scale Your Growth
+      </li>
+     </ul>
+     <span class="eco-step-cta">
+      Talk to Growth Expert
+     </span>
+    </div>
+    <div class="eco-step">
+     <span class="step-eyebrow">
+      Step 04 · Partner for IPO
+     </span>
+     <h4>
+      Partner for IPO
+     </h4>
+     <div class="sub">
+      Cardi.co.id · Cardi Agent
+     </div>
+     <p class="d">
+      Mempersiapkan perusahaan menjadi investment-ready dan IPO-ready melalui strategi bisnis, corporate governance, investor communication, dan transformasi perusahaan.
+     </p>
+     <ul>
+      <li>
+       Business Strategy &amp; Corporate Governance
+      </li>
+      <li>
+       Investor Communication &amp; Transformation
+      </li>
+      <li>
+       Strategic Partnership · Partner for IPO
+      </li>
+     </ul>
+     <span class="eco-step-cta">
+      Talk to IPO Advisor
+     </span>
+    </div>
+   </div>
+   <div class="timeline">
+    <div class="tl-track">
+     <div class="tl-item">
+      <div class="tl-dot">
+      </div>
+      <div class="tl-year">
+       2016
+      </div>
+      <div class="tl-label">
+       Foodinhands Community, Jakarta
+      </div>
+     </div>
+     <div class="tl-item">
+      <div class="tl-dot">
+      </div>
+      <div class="tl-year">
+       2017
+      </div>
+      <div class="tl-label">
+       Inhands — managed brand agency
+      </div>
+     </div>
+     <div class="tl-item">
+      <div class="tl-dot">
+      </div>
+      <div class="tl-year">
+       2019
+      </div>
+      <div class="tl-label">
+       Cardi Branding &amp; Cardi Digital founded
+      </div>
+     </div>
+     <div class="tl-item">
+      <div class="tl-dot">
+      </div>
+      <div class="tl-year">
+       2020–2025
+      </div>
+      <div class="tl-label">
+       Cardi Nusantara — GTM partner for Indonesia
+      </div>
+     </div>
+     <div class="tl-item">
+      <div class="tl-dot">
+      </div>
+      <div class="tl-year">
+       2026
+      </div>
+      <div class="tl-label">
+       Cardi — holding company, IPO Readiness-as-a-Service
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+ <!-- SEGMENTS SECTION -->
+ <section class="section" id="segments">
+  <div class="wrap">
+   <div class="section-head center">
+    <div class="eyebrow">
+     // Untuk Siapa
+    </div>
+    <h2>
+     GTM partner untuk dua segmen utama.
+    </h2>
+   </div>
+   <div class="segments">
+    <div class="seg local">
+     <div class="seg-tag">
+      BRAND LOKAL
+     </div>
+     <h3>
+      Go National
+     </h3>
+     <p>
+      Brand lokal dengan produk bagus tapi belum punya sistem GTM yang solid — belum bisa scale beyond founder-led.
+     </p>
+     <ul>
+      <li>
+       Strategi market entry yang terarah
+      </li>
+      <li>
+       Eksekusi lead gen &amp; digital channel
+      </li>
+      <li>
+       Live commerce &amp; offline distribution
+      </li>
+      <li>
+       GTM playbook yang bisa direplikasi
+      </li>
+     </ul>
+    </div>
+    <div class="seg foreign">
+     <div class="seg-tag">
+      BRAND LUAR NEGERI
+     </div>
+     <h3>
+      Enter Indonesia
+     </h3>
+     <p>
+      Foreign brand yang mau masuk Indonesia tapi tidak punya tim lokal, tidak mengerti pasar, tidak punya channel distribusi.
+     </p>
+     <ul>
+      <li>
+       Local market entry strategy
+      </li>
+      <li>
+       Brand localization &amp; positioning
+      </li>
+      <li>
+       Digital growth + marketplace setup
+      </li>
+      <li>
+       Full commercial execution di lapangan
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </section>
+ <!-- CAPABILITIES SECTION -->
+ <section class="section soft" id="capabilities">
+  <div class="wrap">
+   <div class="section-head center">
+    <div class="eyebrow">
+     // Kapabilitas GTM
+    </div>
+    <h2>
+     Lima kapabilitas yang menutup seluruh GTM journey.
+    </h2>
+   </div>
+   <div class="caps">
+    <div class="cap">
+     <div class="cnum">
+      1
+     </div>
+     <div>
+      <h3>
+       Market Entry Strategy
+      </h3>
+      <p>
+       Positioning, pricing, dan kategori yang disesuaikan untuk konsumen Indonesia.
+      </p>
+     </div>
+    </div>
+    <div class="cap">
+     <div class="cnum">
+      2
+     </div>
+     <div>
+      <h3>
+       Lead Generation
+      </h3>
+      <p>
+       Demand gen yang terstruktur — dari konten organik sampai paid acquisition.
+      </p>
+     </div>
+    </div>
+    <div class="cap">
+     <div class="cnum">
+      3
+     </div>
+     <div>
+      <h3>
+       Digital Growth
+      </h3>
+      <p>
+       SEO, ads, marketplace, dan live commerce dijalankan sebagai satu engine.
+      </p>
+     </div>
+    </div>
+    <div class="cap">
+     <div class="cnum">
+      4
+     </div>
+     <div>
+      <h3>
+       Sales Execution
+      </h3>
+      <p>
+       Live commerce, marketplace ops, B2B outreach — produk benar-benar terjual.
+      </p>
+     </div>
+    </div>
+    <div class="cap cap-full">
+     <div class="cnum">
+      5
+     </div>
+     <div>
+      <h3>
+       Foreign Market Entry
+      </h3>
+      <p>
+       Kami jadi kaki tangan brand luar negeri di Indonesia, dari hari pertama.
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+ <!-- INDUSTRIES SECTION -->
+ <section class="section soft reveal" id="industries">
+  <div class="wrap">
+   <div class="eyebrow">
+    // Industri yang Kami Tangani
+   </div>
+   <h2>
+    GTM partner lintas industri.
+   </h2>
+   <p class="lead" style="margin:12px 0 40px;">
+    Dari travel &amp; umroh sampai fintech — sistem yang sama, disesuaikan per industri.
+   </p>
+   <div class="ind-grid">
+    <div class="ind-card">
+     <div class="ind-top">
+      <span class="ind-emoji">
+       🕌
+      </span>
+      <h5>
+       Travel &amp; Umroh
+      </h5>
+     </div>
+     <ul>
+      <li>
+       Kelola data jamaah
+      </li>
+      <li>
+       Follow-up otomatis
+      </li>
+      <li>
+       Broadcast paket via WhatsApp
+      </li>
+     </ul>
+    </div>
+    <div class="ind-card">
+     <div class="ind-top">
+      <span class="ind-emoji">
+       💄
+      </span>
+      <h5>
+       Beauty &amp; Klinik
+      </h5>
+     </div>
+     <ul>
+      <li>
+       Booking online
+      </li>
+      <li>
+       Reminder treatment
+      </li>
+      <li>
+       Loyalitas pelanggan otomatis
+      </li>
+     </ul>
+    </div>
+    <div class="ind-card">
+     <div class="ind-top">
+      <span class="ind-emoji">
+       💰
+      </span>
+      <h5>
+       Finance &amp; Asuransi
+      </h5>
+     </div>
+     <ul>
+      <li>
+       Lead scoring
+      </li>
+      <li>
+       Nurturing nasabah
+      </li>
+      <li>
+       Telesales dengan rekaman panggilan
+      </li>
+     </ul>
+    </div>
+    <div class="ind-card">
+     <div class="ind-top">
+      <span class="ind-emoji">
+       🎓
+      </span>
+      <h5>
+       Edukasi
+      </h5>
+     </div>
+     <ul>
+      <li>
+       PMB otomatis
+      </li>
+      <li>
+       Update orang tua
+      </li>
+      <li>
+       Komunikasi alumni via WA &amp; email
+      </li>
+     </ul>
+    </div>
+    <div class="ind-card">
+     <div class="ind-top">
+      <span class="ind-emoji">
+       🚗
+      </span>
+      <h5>
+       Otomotif
+      </h5>
+     </div>
+     <ul>
+      <li>
+       Test drive &amp; servis
+      </li>
+      <li>
+       Reminder servis
+      </li>
+      <li>
+       Upsell aksesori via broadcast
+      </li>
+     </ul>
+    </div>
+    <div class="ind-card">
+     <div class="ind-top">
+      <span class="ind-emoji">
+       📡
+      </span>
+      <h5>
+       ISP / Telco
+      </h5>
+     </div>
+     <ul>
+      <li>
+       Tiket gangguan otomatis
+      </li>
+      <li>
+       Notifikasi tagihan
+      </li>
+      <li>
+       Retensi pelanggan
+      </li>
+     </ul>
+    </div>
+    <div class="ind-card">
+     <div class="ind-top">
+      <span class="ind-emoji">
+       🏥
+      </span>
+      <h5>
+       Kesehatan
+      </h5>
+     </div>
+     <ul>
+      <li>
+       Reminder jadwal donor
+      </li>
+      <li>
+       Edukasi pasien
+      </li>
+      <li>
+       Koordinasi rujukan antar unit
+      </li>
+     </ul>
+    </div>
+    <div class="ind-card">
+     <div class="ind-top">
+      <span class="ind-emoji">
+       🚙
+      </span>
+      <h5>
+       Dealer Mobil
+      </h5>
+     </div>
+     <ul>
+      <li>
+       Manajemen lead showroom
+      </li>
+      <li>
+       Follow-up test drive
+      </li>
+      <li>
+       Broadcast promo via WhatsApp
+      </li>
+     </ul>
+    </div>
+    <div class="ind-card">
+     <div class="ind-top">
+      <span class="ind-emoji">
+       🚕
+      </span>
+      <h5>
+       Rental Mobil
+      </h5>
+     </div>
+     <ul>
+      <li>
+       Booking otomatis
+      </li>
+      <li>
+       Reminder pengembalian
+      </li>
+      <li>
+       Upsell armada via WhatsApp
+      </li>
+     </ul>
+    </div>
+    <div class="ind-card">
+     <div class="ind-top">
+      <span class="ind-emoji">
+       🏗️
+      </span>
+      <h5>
+       Kontraktor
+      </h5>
+     </div>
+     <ul>
+      <li>
+       Leads proyek
+      </li>
+      <li>
+       Follow-up klien otomatis
+      </li>
+      <li>
+       Koordinasi tim lapangan
+      </li>
+     </ul>
+    </div>
+    <div class="ind-card">
+     <div class="ind-top">
+      <span class="ind-emoji">
+       ❤️
+      </span>
+      <h5>
+       Healthcare
+      </h5>
+     </div>
+     <ul>
+      <li>
+       Appointment pasien
+      </li>
+      <li>
+       Reminder otomatis
+      </li>
+      <li>
+       Riwayat komunikasi terpusat
+      </li>
+     </ul>
+    </div>
+    <div class="ind-card">
+     <div class="ind-top">
+      <span class="ind-emoji">
+       🏛️
+      </span>
+      <h5>
+       Pemerintah
+      </h5>
+     </div>
+     <ul>
+      <li>
+       Kelola aduan publik
+      </li>
+      <li>
+       Layanan warga terpusat
+      </li>
+      <li>
+       Monitoring kinerja divisi
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="ind-more">
+    <span>
+     <b>
+      Manufaktur
+     </b>
+     — pipeline penjualan, order distributor
+    </span>
+    <span>
+     <b>
+      Non-Profit &amp; NGO
+     </b>
+     — kelola donor &amp; relawan
+    </span>
+    <span>
+     <b>
+      Ritel &amp; E-Commerce
+     </b>
+     — inbox terpusat, broadcast promo
+    </span>
+    <span>
+     <b>
+      Professional Service
+     </b>
+     — leads &amp; pipeline proyek
+    </span>
+    <span>
+     <b>
+      Kampus &amp; Universitas
+     </b>
+     — funnel pendaftaran mahasiswa
+    </span>
+    <span>
+     <b>
+      &amp; 25+ industri lainnya
+     </b>
+     — restoran, bank, koperasi, rumah sakit, hotel, apotek, dll.
+    </span>
+   </div>
+  </div>
+ </section>
+ <!-- CARDI MATRIX FRAMEWORK SECTION -->
+ <section class="section reveal" id="framework">
+  <div class="wrap">
+   <div class="eyebrow">
+    // Cardi Matrix Framework™
+   </div>
+   <h2>
+    Traffic → Revenue → IPO.
+   </h2>
+   <p class="lead" style="margin:12px 0 40px;">
+    Satu funnel yang sama, dipakai dari lead pertama sampai brand siap ekspansi. Cardi Nusantara menjalankan bagian tengah funnel ini: mengubah traffic jadi lead, dan lead jadi penjualan.
+   </p>
+   <div class="fw-grid">
+    <div class="fw-card">
+     <div class="fw-stage">
+      TOFI · Awareness
+     </div>
+     <div class="fw-obj">
+      Build Awareness &amp; Demand
+     </div>
+     <div class="fw-kpis">
+      <span>
+       Reach
+      </span>
+      <span>
+       Impression
+      </span>
+      <span>
+       Video Views
+      </span>
+      <span>
+       Brand Search
+      </span>
+     </div>
+     <div class="fw-acts">
+      Brand campaign · content marketing · PR &amp; media · SEO · social media · KOL
+     </div>
+    </div>
+    <div class="fw-card">
+     <div class="fw-stage">
+      MOFU · Consideration
+     </div>
+     <div class="fw-obj">
+      Generate Qualified Leads
+     </div>
+     <div class="fw-kpis">
+      <span>
+       Leads
+      </span>
+      <span>
+       MQL
+      </span>
+      <span>
+       WhatsApp
+      </span>
+      <span>
+       Landing CVR
+      </span>
+     </div>
+     <div class="fw-acts">
+      Lead magnet · webinar · email marketing · retargeting · AI chatbot · CRM
+     </div>
+    </div>
+    <div class="fw-card">
+     <div class="fw-stage">
+      BOFU · Conversion
+     </div>
+     <div class="fw-obj">
+      Convert Revenue
+     </div>
+     <div class="fw-kpis">
+      <span>
+       Sales
+      </span>
+      <span>
+       ROAS
+      </span>
+      <span>
+       CAC
+      </span>
+      <span>
+       Closing Rate
+      </span>
+     </div>
+     <div class="fw-acts">
+      Sales team · live commerce · marketplace · performance ads · proposal · closing
+     </div>
+    </div>
+    <div class="fw-card post">
+     <div class="fw-stage">
+      Post Purchase
+     </div>
+     <div class="fw-obj">
+      Retention &amp; Expansion
+     </div>
+     <div class="fw-kpis">
+      <span>
+       LTV
+      </span>
+      <span>
+       NPS
+      </span>
+      <span>
+       Renewal
+      </span>
+      <span>
+       Upsell
+      </span>
+     </div>
+     <div class="fw-acts">
+      Loyalty program · community · CRM automation · referral · cross-sell
+     </div>
+    </div>
+   </div>
+   <p class="fw-note">
+    Funnel ini dijalankan Cardi Nusantara sebagai Step 02 dari ecosystem — lihat posisi lengkapnya di
+    <a href="#journey">
+     Cardi Ecosystem ↑
+    </a>
+   </p>
+  </div>
+ </section>
+ <!-- LEVEL CHECKER SECTION -->
+ <section class="section soft reveal" id="checker">
+  <div class="wrap">
+   <div class="eyebrow">
+    // Cek Level Brand Anda
+   </div>
+   <h2>
+    5 Step Level Cardi Matrix.
+   </h2>
+   <p class="lead" style="margin:12px 0 40px;">
+    Posisikan brand Anda di salah satu level, lalu fokus menguasainya sebelum naik. Klik level untuk lihat channel yang seharusnya dipakai.
+   </p>
+   <div class="lvl-tabs" id="lvlTabs">
+   </div>
+   <div class="lvl-panel" id="lvlPanel">
+   </div>
+  </div>
+ </section>
+ <!-- CLIENT TIERS SECTION -->
+ <section class="section reveal" id="tiers">
+  <div class="wrap">
+   <div class="eyebrow">
+    // Ketentuan Client
+   </div>
+   <h2>
+    Siapa yang bisa kami tangani.
+   </h2>
+   <p class="lead" style="margin:12px 0 40px;">
+    Setiap tier kemitraan datang dengan syarat kelayakan yang jelas — supaya sistem GTM kami bekerja optimal sejak hari pertama.
+   </p>
+   <div class="tier-grid">
+    <div class="tier-card t1">
+     <div class="tier-name">
+      New Star
+     </div>
+     <ul>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Brand / Distributor Tunggal
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Merek terdaftar di DJKI (sertifikat HAKI kelas 35)
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Toko Shopee Mall aktif
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Media sosial aktif
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Minimum SKU induk &amp; stok per varian
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Content makeover untuk semua SKU
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Periode kerjasama 1 tahun
+      </li>
+     </ul>
+    </div>
+    <div class="tier-card t2">
+     <div class="tier-name">
+      Rising Star
+     </div>
+     <ul>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Omzet Rp100–300 juta / bulan
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Brand / Distributor Tunggal
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Stok per SKU varian ≥ 24
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Merek terdaftar DJKI (HAKI kelas 35)
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Umur brand ≥ 5 tahun
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Harga jual marketplace maks. 15% lebih rendah dari harga official store
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Periode kerjasama 3 bulan
+      </li>
+     </ul>
+    </div>
+    <div class="tier-card t3">
+     <div class="tier-name">
+      Super Star
+     </div>
+     <ul>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Omzet ≥ Rp300 juta / bulan
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Ketentuan lain sama seperti Rising Star
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Prioritas alokasi tim &amp; budget
+      </li>
+      <li>
+       <span class="tier-dot">
+        ●
+       </span>
+       Akses penuh ke seluruh unit ekosistem Cardi
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </section>
+ <!-- WHY US / COMPARE SECTION -->
+ <section class="section" id="compare">
+  <div class="wrap">
+   <div class="section-head center">
+    <div class="eyebrow">
+     // Kenapa Cardi Nusantara
+    </div>
+    <h2>
+     Satu partner, bukan lima vendor.
+    </h2>
+   </div>
+   <div class="compare">
+    <div class="cmp old">
+     <div class="clab">
+      Cara Biasa
+     </div>
+     <ul>
+      <li>
+       Branding agency untuk identitas
+      </li>
+      <li>
+       Digital agency untuk ads &amp; SEO
+      </li>
+      <li>
+       Distributor untuk channel
+      </li>
+      <li>
+       Sales team untuk eksekusi
+      </li>
+      <li>
+       Konsultan untuk menyatukan semuanya
+      </li>
+     </ul>
+     <div class="cfoot">
+      5 kontrak · 5 hand-off · tidak ada yang punya revenue
+     </div>
+    </div>
+    <div class="cmp new">
+     <div class="clab">
+      Cardi Nusantara
+     </div>
+     <ul>
+      <li>
+       Satu ekosistem, semua stage covered
+      </li>
+      <li>
+       Satu strategi dari lead ke sale
+      </li>
+      <li>
+       Satu partner yang accountable
+      </li>
+      <li>
+       Data flows across every stage
+      </li>
+      <li>
+       Success diukur dari revenue
+      </li>
+     </ul>
+     <div class="cfoot">
+      1 kontrak · 0 hand-off · closed loop ke revenue
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+ <!-- ECOSYSTEM SCROLLYTELLING PORTFOLIO -->
+ <section class="eco-scroll" id="ecosystem">
+  <div class="eco-scroll-head">
+   <div class="wrap">
+    <div class="eyebrow">
+     // Ekosistem Cardi Group
+    </div>
+    <h2>
+     Ekosistem di balik GTM.
+    </h2>
+    <p class="lead">
+     Setiap klien Cardi Nusantara langsung terhubung ke seluruh unit Cardi Group — satu pintu, semua kapabilitas.
+    </p>
+   </div>
+  </div>
+  <div class="eco-panels" id="ecoPanels">
+   <article class="eco-panel" data-eco-panel="" data-index="0">
+    <div aria-hidden="true" class="eco-panel-bg" data-eco-parallax="">
+    </div>
+    <div class="wrap eco-panel-inner">
+     <div class="eco-copy">
+      <span class="eco-num">
+       01
+      </span>
+      <span class="eco-tag">
+       BRAND
+      </span>
+      <h3>
+       Branding Cardi Nusantara
+      </h3>
+      <p>
+       Brand strategy, identity &amp; ad-ready assets. Bangun brand yang dipercaya &amp; materi branding iklan yang menjual — delivery cepat, siap iklan.
+      </p>
+      <a class="btn btn-ghost eco-yt-link" href="https://www.youtube.com/shorts/McSb2-Sh81k" rel="noopener" target="_blank">
+       Open in YouTube
+      </a>
+     </div>
+     <div class="eco-video">
+      <div class="eco-phone" data-eco-sticky="">
+       <div aria-hidden="true" class="eco-phone-notch">
+       </div>
+       <div class="eco-phone-screen eco-yt" data-yt-id="McSb2-Sh81k" data-yt-title="Branding Cardi Nusantara">
+        <button aria-label="Play Branding Cardi Nusantara" class="eco-yt-play" type="button">
+         <img alt="" class="eco-yt-thumb" height="360" loading="lazy" src="https://i.ytimg.com/vi/McSb2-Sh81k/hqdefault.jpg" width="480"/>
+         <span aria-hidden="true" class="eco-yt-btn">
+          <svg height="28" viewbox="0 0 24 24" width="28">
+           <path d="M8 5v14l11-7z" fill="currentColor">
+           </path>
+          </svg>
+         </span>
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </article>
+   <article class="eco-panel is-flip" data-eco-panel="" data-index="1">
+    <div aria-hidden="true" class="eco-panel-bg" data-eco-parallax="">
+    </div>
+    <div class="wrap eco-panel-inner">
+     <div class="eco-copy">
+      <span class="eco-num">
+       02
+      </span>
+      <span class="eco-tag">
+       GTM
+      </span>
+      <h3>
+       Cardi Nusantara
+      </h3>
+      <p>
+       GTM execution — Phase 02 dalam Ecosystem™. Closing closed-loop GTM dari lead generation hingga commercial revenue di lapangan.
+      </p>
+      <a class="btn btn-ghost eco-yt-link" href="https://www.youtube.com/shorts/-PP4EyeS9E4" rel="noopener" target="_blank">
+       Open in YouTube
+      </a>
+     </div>
+     <div class="eco-video">
+      <div class="eco-phone" data-eco-sticky="">
+       <div aria-hidden="true" class="eco-phone-notch">
+       </div>
+       <div class="eco-phone-screen eco-yt" data-yt-id="-PP4EyeS9E4" data-yt-title="Cardi Nusantara">
+        <button aria-label="Play Cardi Nusantara" class="eco-yt-play" type="button">
+         <img alt="" class="eco-yt-thumb" height="360" loading="lazy" src="https://i.ytimg.com/vi/-PP4EyeS9E4/hqdefault.jpg" width="480"/>
+         <span aria-hidden="true" class="eco-yt-btn">
+          <svg height="28" viewbox="0 0 24 24" width="28">
+           <path d="M8 5v14l11-7z" fill="currentColor">
+           </path>
+          </svg>
+         </span>
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </article>
+   <article class="eco-panel" data-eco-panel="" data-index="2">
+    <div aria-hidden="true" class="eco-panel-bg" data-eco-parallax="">
+    </div>
+    <div class="wrap eco-panel-inner">
+     <div class="eco-copy">
+      <span class="eco-num">
+       03
+      </span>
+      <span class="eco-tag">
+       SCALE
+      </span>
+      <h3>
+       Digital Cardi
+      </h3>
+      <p>
+       AI-powered performance marketing &amp; own brand portfolio. Scale business performance dengan sistem akurat dan pertumbuhan berkelanjutan.
+      </p>
+      <a class="btn btn-ghost eco-yt-link" href="https://www.youtube.com/shorts/LDMhYoXuaBE" rel="noopener" target="_blank">
+       Open in YouTube
+      </a>
+     </div>
+     <div class="eco-video">
+      <div class="eco-phone" data-eco-sticky="">
+       <div aria-hidden="true" class="eco-phone-notch">
+       </div>
+       <div class="eco-phone-screen eco-yt" data-yt-id="LDMhYoXuaBE" data-yt-title="Digital Cardi">
+        <button aria-label="Play Digital Cardi" class="eco-yt-play" type="button">
+         <img alt="" class="eco-yt-thumb" height="360" loading="lazy" src="https://i.ytimg.com/vi/LDMhYoXuaBE/hqdefault.jpg" width="480"/>
+         <span aria-hidden="true" class="eco-yt-btn">
+          <svg height="28" viewbox="0 0 24 24" width="28">
+           <path d="M8 5v14l11-7z" fill="currentColor">
+           </path>
+          </svg>
+         </span>
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </article>
+   <article class="eco-panel is-flip" data-eco-panel="" data-index="3">
+    <div aria-hidden="true" class="eco-panel-bg" data-eco-parallax="">
+    </div>
+    <div class="wrap eco-panel-inner">
+     <div class="eco-copy">
+      <span class="eco-num">
+       04
+      </span>
+      <span class="eco-tag">
+       SELL
+      </span>
+      <h3>
+       Inhands Agency
+      </h3>
+      <p>
+       Live commerce &amp; marketplace sales execution. Creative &amp; social digital marketing agency trusted by 200+ brands, live commerce &amp; KOL.
+      </p>
+      <a class="btn btn-ghost eco-yt-link" href="https://www.youtube.com/shorts/vvFYd_cLCjM" rel="noopener" target="_blank">
+       Open in YouTube
+      </a>
+     </div>
+     <div class="eco-video">
+      <div class="eco-phone" data-eco-sticky="">
+       <div aria-hidden="true" class="eco-phone-notch">
+       </div>
+       <div class="eco-phone-screen eco-yt" data-yt-id="vvFYd_cLCjM" data-yt-title="Inhands Agency">
+        <button aria-label="Play Inhands Agency" class="eco-yt-play" type="button">
+         <img alt="" class="eco-yt-thumb" height="360" loading="lazy" src="https://i.ytimg.com/vi/vvFYd_cLCjM/hqdefault.jpg" width="480"/>
+         <span aria-hidden="true" class="eco-yt-btn">
+          <svg height="28" viewbox="0 0 24 24" width="28">
+           <path d="M8 5v14l11-7z" fill="currentColor">
+           </path>
+          </svg>
+         </span>
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </article>
+   <article class="eco-panel" data-eco-panel="" data-index="4">
+    <div aria-hidden="true" class="eco-panel-bg" data-eco-parallax="">
+    </div>
+    <div class="wrap eco-panel-inner">
+     <div class="eco-copy">
+      <span class="eco-num">
+       05
+      </span>
+      <span class="eco-tag">
+       SELL
+      </span>
+      <h3>
+       Foodinhands Media &amp; Hub
+      </h3>
+      <p>
+       F&amp;B market execution &amp; operations. One of the largest food &amp; lifestyle media platforms in Indonesia — where brands meet F&amp;B talent.
+      </p>
+      <a class="btn btn-ghost eco-yt-link" href="https://www.youtube.com/shorts/ExcPbMnLZmg" rel="noopener" target="_blank">
+       Open in YouTube
+      </a>
+     </div>
+     <div class="eco-video">
+      <div class="eco-phone" data-eco-sticky="">
+       <div aria-hidden="true" class="eco-phone-notch">
+       </div>
+       <div class="eco-phone-screen eco-yt" data-yt-id="ExcPbMnLZmg" data-yt-title="Foodinhands Media &amp; Hub">
+        <button aria-label="Play Foodinhands Media &amp; Hub" class="eco-yt-play" type="button">
+         <img alt="" class="eco-yt-thumb" height="360" loading="lazy" src="https://i.ytimg.com/vi/ExcPbMnLZmg/hqdefault.jpg" width="480"/>
+         <span aria-hidden="true" class="eco-yt-btn">
+          <svg height="28" viewbox="0 0 24 24" width="28">
+           <path d="M8 5v14l11-7z" fill="currentColor">
+           </path>
+          </svg>
+         </span>
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </article>
+   <article class="eco-panel is-flip" data-eco-panel="" data-index="5">
+    <div aria-hidden="true" class="eco-panel-bg" data-eco-parallax="">
+    </div>
+    <div class="wrap eco-panel-inner">
+     <div class="eco-copy">
+      <span class="eco-num">
+       06
+      </span>
+      <span class="eco-tag">
+       ASSET
+      </span>
+      <h3>
+       Cardi Land
+      </h3>
+      <p>
+       Property &amp; physical asset layer — mengubah lahan pasif menjadi pusat aktivitas, gaya hidup, dan ruang bisnis baru.
+      </p>
+      <a class="btn btn-ghost eco-yt-link" href="https://www.youtube.com/shorts/4h72YykeRno" rel="noopener" target="_blank">
+       Open in YouTube
+      </a>
+     </div>
+     <div class="eco-video">
+      <div class="eco-phone" data-eco-sticky="">
+       <div aria-hidden="true" class="eco-phone-notch">
+       </div>
+       <div class="eco-phone-screen eco-yt" data-yt-id="4h72YykeRno" data-yt-title="Cardi Land">
+        <button aria-label="Play Cardi Land" class="eco-yt-play" type="button">
+         <img alt="" class="eco-yt-thumb" height="360" loading="lazy" src="https://i.ytimg.com/vi/4h72YykeRno/hqdefault.jpg" width="480"/>
+         <span aria-hidden="true" class="eco-yt-btn">
+          <svg height="28" viewbox="0 0 24 24" width="28">
+           <path d="M8 5v14l11-7z" fill="currentColor">
+           </path>
+          </svg>
+         </span>
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </article>
+  </div>
+ </section>
+ <!-- TRUSTED CLIENTS SECTION -->
+ <section class="section soft reveal" id="clients">
+  <div class="wrap">
+   <div class="eyebrow">
+    // Selected Clients
+   </div>
+   <h2>
+    Trusted by Brands You Know Well.
+   </h2>
+   <p class="lead" style="margin:12px 0 40px;">
+    200+ brand sudah lewat sistem GTM ini — dari FMCG global, gaming &amp; esports, sampai UMKM yang naik kelas.
+   </p>
+   <div class="logo-grid">
+    <div class="logo-item">
+     Unilever
+    </div>
+    <div class="logo-item">
+     L'Oréal
+    </div>
+    <div class="logo-item">
+     KFC
+    </div>
+    <div class="logo-item">
+     Oppo
+    </div>
+    <div class="logo-item">
+     Telkomsel
+    </div>
+    <div class="logo-item">
+     Wings
+    </div>
+    <div class="logo-item">
+     Vaseline
+    </div>
+    <div class="logo-item">
+     Maybelline
+    </div>
+    <div class="logo-item">
+     Rexona
+    </div>
+    <div class="logo-item">
+     Garnier
+    </div>
+    <div class="logo-item">
+     Magnum
+    </div>
+    <div class="logo-item">
+     Somethinc
+    </div>
+    <div class="logo-item">
+     PUBG Mobile
+    </div>
+    <div class="logo-item">
+     hololive
+    </div>
+    <div class="logo-item">
+     LG
+    </div>
+    <div class="logo-item">
+     Infinix
+    </div>
+    <div class="logo-item">
+     Heineken
+    </div>
+    <div class="logo-item">
+     Bintang
+    </div>
+    <div class="logo-item">
+     ABC
+    </div>
+    <div class="logo-item">
+     GrabFood
+    </div>
+    <div class="logo-item">
+     Republic Padel
+    </div>
+    <div class="logo-item">
+     Mama Koko
+    </div>
+    <div class="logo-item">
+     GabaG
+    </div>
+    <div class="logo-item">
+     Sorex
+    </div>
+   </div>
+   <div class="trusted-foot">
+    200+ National, Multinational &amp; Global Brands
+   </div>
+  </div>
+ </section>
+ <!-- PORTFOLIO DETAIL SECTION -->
+ <section class="section reveal" id="portfolio">
+  <div class="wrap">
+   <div class="eyebrow">
+    // Detail Portofolio
+   </div>
+   <h2>
+    Portofolio lintas kategori.
+   </h2>
+   <p class="lead" style="margin:12px 0 40px;">
+    Rincian 200+ brand yang kami tangani, per kategori industri.
+   </p>
+   <div class="port-grid">
+    <div class="port-card">
+     <div class="port-top">
+      <h5>
+       Fashion Brands
+      </h5>
+      <span class="port-count">
+       50+
+      </span>
+     </div>
+     <p>
+      Aruchi Baby, Sumimo Baby, DialogueBaby Group, MomaBae, Sorex Underware, dan lainnya.
+     </p>
+    </div>
+    <div class="port-card">
+     <div class="port-top">
+      <h5>
+       Food &amp; Beverage
+      </h5>
+      <span class="port-count">
+       70+
+      </span>
+     </div>
+     <p>
+      Kopi Lain Hati, Warung Wakaka, Platinum, Roti Bakar 88, Kafe Betawi, Sponji Cake, Gokana Ramen, Street Boba, dan lainnya.
+     </p>
+    </div>
+    <div class="port-card">
+     <div class="port-top">
+      <h5>
+       Beauty Brands
+      </h5>
+      <span class="port-count">
+       40+
+      </span>
+     </div>
+     <p>
+      DanDan, Hair and Me, BDL, TrueEve, MilaDopiz, Remine Beauty, Turek, Eleven Thirty 1130, dan lainnya.
+     </p>
+    </div>
+    <div class="port-card">
+     <div class="port-top">
+      <h5>
+       Corporate &amp; FMCG
+      </h5>
+      <span class="port-count">
+       40+
+      </span>
+     </div>
+     <p>
+      Infinix, Baterai ABC, MamaKoko Santan, CocoClub Drinks, Sambel Cap Jempol, Sido Muncul, dan lainnya.
+     </p>
+    </div>
+    <div class="port-card">
+     <div class="port-top">
+      <h5>
+       Startups &amp; Government
+      </h5>
+      <span class="port-count">
+       40+
+      </span>
+     </div>
+     <p>
+      Grab Food, OKBANK, Siloam, Bank Mandiri, GoTo, FITA Apps by Telkomsel, TokoGame Voucher, dan lainnya.
+     </p>
+    </div>
+    <div class="port-card">
+     <div class="port-top">
+      <h5>
+       Lifestyle
+      </h5>
+      <span class="port-count">
+       15+
+      </span>
+     </div>
+     <p>
+      Simply Bed, Elite SpringBed, Dr Shield Atap, ITSU Kursi Pijat, BurnLab Sport, SouthCity, UnaKaffee, dan lainnya.
+     </p>
+    </div>
+   </div>
+  </div>
+ </section>
+ <!-- ENGAGEMENT MODELS SECTION -->
+ <section class="section dark" id="engage">
+  <div class="wrap">
+   <div class="section-head center">
+    <div class="eyebrow">
+     // Cara Kerja Sama
+    </div>
+    <h2>
+     Tiga model kerja sama.
+    </h2>
+    <p class="lead">
+     Disesuaikan dengan kebutuhan brand Anda — dari sprint 90 hari sampai equity partnership.
+    </p>
+   </div>
+   <div class="engagements">
+    <div class="eng">
+     <div class="etag">
+      90 HARI
+     </div>
+     <h3>
+      GTM Sprint
+     </h3>
+     <p>
+      Market entry strategy, brand assets lokal, dan validated channel plan — cara tercepat test Indonesia serius.
+     </p>
+    </div>
+    <div class="eng hot">
+     <div class="etag">
+      RETAINER
+     </div>
+     <h3>
+      Growth Partner
+     </h3>
+     <p>
+      Full closed loop bulanan: lead gen, brand management, digital growth, dan eksekusi sales sebagai satu tim.
+     </p>
+    </div>
+    <div class="eng">
+     <div class="etag">
+      EQUITY
+     </div>
+     <h3>
+      Investment Partner
+     </h3>
+     <p>
+      Untuk brand terpilih: kami invest, benerin fundamental dengan AI &amp; teknologi, dan scale menuju exit.
+     </p>
+    </div>
+   </div>
+   <p class="engage-note">
+    Sebagian besar klien global-entry mulai dengan GTM Sprint 90 hari.
+   </p>
+  </div>
+ </section>
+ <!-- TRACK RECORD SECTION -->
+ <section class="section" id="track">
+  <div class="wrap">
+   <div class="section-head center">
+    <div class="eyebrow">
+     // Track Record
+    </div>
+    <h2>
+     Sudah dipercaya.
+    </h2>
+   </div>
+   <div class="stats3">
+    <div class="stat">
+     <div class="n">
+      10+
+     </div>
+     <div class="l">
+      tahun pengalaman
+      <br/>
+      brand &amp; consulting
+     </div>
+    </div>
+    <div class="stat">
+     <div class="n">
+      500+
+     </div>
+     <div class="l">
+      leads delivered
+      <br/>
+      across portfolio
+     </div>
+    </div>
+    <div class="stat">
+     <div class="n">
+      6
+     </div>
+     <div class="l">
+      unit ekosistem
+      <br/>
+      dalam satu loop
+     </div>
+    </div>
+   </div>
+   <div class="cases3">
+    <div class="case">
+     <h4>
+      Surya Painting
+     </h4>
+     <p>
+      Scale dari 4 ke 7 cabang dengan sistem brand &amp; lead yang terstruktur.
+     </p>
+    </div>
+    <div class="case">
+     <h4>
+      China-to-Indonesia Entry
+     </h4>
+     <p>
+      F&amp;B, beauty &amp; industrial brands masuk pasar Indonesia dengan GTM Cardi.
+     </p>
+    </div>
+    <div class="case">
+     <h4>
+      ANW Klinik dr. Alisya
+     </h4>
+     <p>
+      Long-term growth partner — dari brand hingga akuisisi pasien.
+     </p>
+    </div>
+   </div>
+   <p class="track-note">
+    Featured by Trans7, Suara.com, dan Liputan6.
+   </p>
+  </div>
+ </section>
+ <!-- CTA / CONTACT SECTION -->
+ <section class="cta-sec reveal" id="contact">
+  <div class="wrap center">
+   <h2>
+    Let's open Indonesia together.
+   </h2>
+   <p class="lead" style="margin:16px auto 0;">
+    Ceritakan brand Anda, kami petakan GTM system dalam satu minggu.
+   </p>
+   <div class="contact-grid">
+    <div class="contact-info">
+     <h4>
+      Kontak
+     </h4>
+     <div class="ci-row">
+      <span class="k">
+       WhatsApp
+      </span>
+      <span class="v">
+       +62 817-449-760
+      </span>
+     </div>
+     <div class="ci-row">
+      <span class="k">
+       Lokasi
+      </span>
+      <span class="v">
+       Jakarta, Indonesia
+      </span>
+     </div>
+     <div class="ci-row">
+      <span class="k">
+       Jam Operasional
+      </span>
+      <span class="v">
+       Senin–Jumat, 09.00–18.00 WIB
+      </span>
+     </div>
+     <a class="btn btn-wa" href="https://wa.me/62817449760?text=Halo%20Cardi%20Nusantara%21%20Saya%20ingin%20terhubung%20%2F%20konsultasi." rel="noopener" style="margin-top:6px;width:100%;" target="_blank">
+      Chat via WhatsApp →
+     </a>
+    </div>
+    <form action="https://wa.me/62817449760?text=Halo%20Cardi%20Nusantara%21%20Saya%20ingin%20terhubung%20%2F%20konsultasi." class="contact-form" method="get" rel="noopener" target="_blank">
+     <div class="form-row">
+      <div>
+       <label>
+        Nama
+       </label>
+       <input name="Nama" required="" type="text"/>
+      </div>
+      <div>
+       <label>
+        Nama Brand / Perusahaan
+       </label>
+       <input name="Perusahaan" required="" type="text"/>
+      </div>
+     </div>
+     <div class="form-row">
+      <div>
+       <label>
+        Email
+       </label>
+       <input name="Email" required="" type="email"/>
+      </div>
+      <div>
+       <label>
+        WhatsApp
+       </label>
+       <input name="WhatsApp" type="tel"/>
+      </div>
+     </div>
+     <label>
+      Jenis Brand
+     </label>
+     <div class="radio-group">
+      <label class="radio-pill">
+       <input checked="" name="Jenis" type="radio" value="Brand Lokal"/>
+       Brand Lokal
+      </label>
+      <label class="radio-pill">
+       <input name="Jenis" type="radio" value="Brand Luar Negeri"/>
+       Brand Luar Negeri
+      </label>
+     </div>
+     <label>
+      Ceritakan Brand Anda
+     </label>
+     <textarea name="Pesan" placeholder="Produk, target pasar, dan tantangan GTM saat ini..."></textarea>
+     <div style="margin-top:18px;">
+      <button class="btn btn-red btn-lg" style="border:none;cursor:pointer;" type="submit">
+       Start Your GTM →
+      </button>
+     </div>
+    </form>
+   </div>
+   <div class="footer-caption" style="margin-top:32px;font-size:13.5px;color:rgba(255,255,255,0.5);">
+    Cardi Nusantara Group · Jakarta ·
+    <b style="color:#E8492A;">
+     cardinusantara.com
+    </b>
+    · @cardinusantara
+   </div>
+  </div>
+ </section>
+</main>
+
+
+<!-- ==========================================================================
+     LATEST INSIGHT & ARTIKEL
+     ========================================================================== -->
+<section class="section soft" id="insights">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">// Insight &amp; Panduan Bisnis</div>
+      <h2>Strategi Brand, Pasar, dan Pertumbuhan.</h2>
+      <p class="lead">
+        Analisis mendalam dari praktisi Cardi Nusantara mengenai riset pasar, periklanan digital, dan ekspansi pasar Indonesia.
+      </p>
+    </div>
+    <div class="grid cols-3" style="margin-top: 36px;">
+      {latestPosts.map((post) => (
+        <ArticleCard
+          title={post.data.title}
+          description={post.data.description}
+          pubDate={post.data.pubDate}
+          slug={post.slug}
+          cover={post.data.cover}
+        />
+      ))}
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <a class="btn btn-outline" href="/blog">Lihat Semua 30 Artikel &rarr;</a>
+    </div>
+  </div>
+</section>
+
 </BaseLayout>
 
-<style>
-  .hero {
-    padding: 88px 0 72px;
+<script>
+  const contactForm = document.querySelector('#contact form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nama = (contactForm.querySelector('input[name="nama"]') as HTMLInputElement)?.value || '';
+      const brand = (contactForm.querySelector('input[name="brand"]') as HTMLInputElement)?.value || '';
+      const email = (contactForm.querySelector('input[name="email"]') as HTMLInputElement)?.value || '';
+      const wa = (contactForm.querySelector('input[name="wa"]') as HTMLInputElement)?.value || '';
+      const jenis = (contactForm.querySelector('select[name="jenis"]') as HTMLSelectElement)?.value || '';
+      const pesan = (contactForm.querySelector('textarea[name="pesan"]') as HTMLTextAreaElement)?.value || '';
+
+      const lines = [
+        '*[Inquiry GTM — Cardi Nusantara]*',
+        '',
+        `👤 *Nama:* ${nama}`,
+        `🏢 *Brand/Perusahaan:* ${brand}`,
+        `📧 *Email:* ${email}`,
+        `📱 *WhatsApp:* ${wa}`,
+        `🎯 *Jenis Brand:* ${jenis}`,
+        '',
+        `💬 *Pesan / Target:*`,
+        pesan,
+        '',
+        '---',
+        'Terkirim via form cardinusantara.com'
+      ];
+
+      const waUrl = `https://wa.me/62817449760?text=${encodeURIComponent(lines.join('\n'))}`;
+      window.open(waUrl, '_blank', 'noopener');
+    });
   }
-  .hero-copy {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    max-width: 860px;
-  }
-  .hero h1 {
-    font-size: clamp(38px, 6vw, 68px);
-    line-height: 1.05;
-    letter-spacing: -0.035em;
-  }
-</style>
+</script>

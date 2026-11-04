@@ -1,189 +1,56 @@
 ---
-// Cardi Nusantara Footer
-const WA_LINK = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Nusantara%2C%20saya%20ingin%20konsultasi.';
+// Cardi Nusantara Footer matching live site
 ---
 
-<footer class="ftr">
+<footer class="site-footer">
   <div class="wrap">
-    <div class="f-top">
-      <!-- Brand & Mission Column -->
+    <div class="f-grid">
+      <!-- Brand column -->
       <div class="f-brand">
-        <a class="f-logo" href="/" aria-label="Cardi Nusantara">
+        <a class="brand" href="/" aria-label="Cardi Nusantara">
           <img 
-            src="/logos/nusantara/icon-nusantara.png" 
             alt="Cardi Nusantara" 
-            width="22" 
-            height="34" 
-            style="filter: brightness(1.2);"
+            height="44" 
+            src="/logos/nusantara/logo-nusantara-light.png" 
+            width="190"
+            style="height:44px;width:auto;display:block;"
           />
-          <div class="f-logo-text">
-            <span class="f-prefix">cardi</span>
-            <span class="f-title">nusantara</span>
-          </div>
         </a>
         <p>
-          Dilihat, diingat, dipercaya — lalu dibeli. Ekosistem pertumbuhan bisnis Indonesia.
+          Membangun perusahaan yang siap pasar dengan AI dan teknologi. Kami mengakuisisi, mengembangkan, dan menyiapkan brand untuk exit bernilai lebih tinggi.
         </p>
-        <a class="btn btn-ghost-light btn-sm" href={WA_LINK} target="_blank" rel="noopener noreferrer">
-          WhatsApp 0812-8989-5646
+      </div>
+
+      <!-- Navigasi -->
+      <div class="f-col">
+        <h4>Navigasi</h4>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/blog">Blog</a>
+      </div>
+
+      <!-- Ekosistem Cardi -->
+      <div class="f-col">
+        <h4>Ekosistem</h4>
+        <a href="https://cardi.co.id" rel="noopener" target="_blank">Cardi</a>
+        <a href="/" rel="noopener">Cardi Nusantara</a>
+        <a href="https://digital.cardinusantara.com" rel="noopener" target="_blank">Cardi Digital</a>
+        <a href="https://branding.cardinusantara.com" rel="noopener" target="_blank">Cardi Branding</a>
+      </div>
+
+      <!-- Kontak -->
+      <div class="f-col">
+        <h4>Kontak</h4>
+        <a href="https://wa.me/62817449760?text=Halo%20Cardi%20Nusantara%21%20Saya%20ingin%20terhubung%20%2F%20konsultasi." rel="noopener" target="_blank">
+          WhatsApp 0817-449-760
         </a>
-      </div>
-
-      <!-- Cardi Ecosystem -->
-      <div class="f-col">
-        <h3>Cardi</h3>
-        <a href="https://cardi.co.id/tentang/">Tentang</a>
-        <a href="https://cardi.co.id/ekosistem/">Ekosistem</a>
-        <a href="https://cardi.co.id/cek-brand/">Cek brand gratis</a>
-        <a href="https://cardi.co.id/insight/">Insight</a>
-        <a href="https://cardi.co.id/toko/">Toko Cardi</a>
-        <a href="https://cardi.co.id/karier/">Karier</a>
-        <a href="https://cardi.co.id/founder/">Founder</a>
-      </div>
-
-      <!-- Cardi Nusantara Services -->
-      <div class="f-col">
-        <h3>Cardi Nusantara</h3>
-        <a href="/branding">Branding</a>
-        <a href="/digital">Digital</a>
-        <a href="/gtm">Go-to-Market</a>
-        <a href="/ipo-partner">IPO Partner</a>
-        <a href="/portofolio">Portofolio</a>
-        <a href="/metodologi">Metodologi</a>
-        <a href="/tim">Tim</a>
-        <a href="/blog">Blog & Artikel</a>
-        <a href="/brief">Kirim brief</a>
-      </div>
-
-      <!-- Cardi Agent Products -->
-      <div class="f-col">
-        <h3>Cardi Agent</h3>
-        <a href="https://aiagent.cardi.co.id/crm/" target="_blank" rel="noopener">Cardi Agent AI (Nadi)</a>
-        <a href="https://aiagent.cardi.co.id/mom/" target="_blank" rel="noopener">Cardi Agent AI MoM</a>
-        <a href="https://aiagent.cardi.co.id/loyal/" target="_blank" rel="noopener">Cardi Agent AI Loyal</a>
-        <a href="https://aiagent.cardi.co.id/#harga" target="_blank" rel="noopener">Harga</a>
-        <a href="https://aiagent.cardi.co.id/pilot/" target="_blank" rel="noopener">Program pilot</a>
-        <a href="https://aiagent.cardi.co.id/bantuan/" target="_blank" rel="noopener">Bantuan</a>
       </div>
     </div>
 
-    <!-- Bottom Copyright Strip -->
-    <div class="f-bot">
-      <span>&copy; {new Date().getFullYear()} PT Digital Cardi Nusantara · Jakarta</span>
-      <span>cardi.co.id · cardinusantara.com · aiagent.cardi.co.id</span>
+    <div class="f-bottom">
+      <div>
+        © 2026 Cardi Nusantara. Seluruh hak cipta dilindungi.
+      </div>
     </div>
   </div>
 </footer>
-
-<style>
-  .ftr {
-    background: var(--dark);
-    color: var(--on-dark-2);
-    padding: 68px 0 28px;
-    margin-top: 60px;
-    border-top: 1px solid var(--dark-line);
-  }
-
-  .f-top {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
-    gap: 36px;
-  }
-
-  .f-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-  }
-
-  .f-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: #ffffff;
-  }
-
-  .f-logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-  }
-
-  .f-prefix {
-    font-size: 13px;
-    font-weight: 700;
-    color: #94A3B8;
-  }
-
-  .f-title {
-    font-size: 20px;
-    font-weight: 800;
-    color: #ffffff;
-  }
-
-  .f-brand p {
-    font-size: 14.5px;
-    max-width: 320px;
-    line-height: 1.55;
-    color: var(--on-dark-2);
-  }
-
-  .f-col {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .f-col h3 {
-    color: #ffffff;
-    font-size: 14.5px;
-    font-weight: 700;
-    margin-bottom: 4px;
-    letter-spacing: -0.01em;
-  }
-
-  .f-col a {
-    color: var(--on-dark-2);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.15s ease;
-  }
-
-  .f-col a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-  }
-
-  .f-bot {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-    border-top: 1px solid var(--dark-line);
-    margin-top: 48px;
-    padding-top: 22px;
-    font-size: 13px;
-    color: #717D96;
-  }
-
-  @media (max-width: 980px) {
-    .f-top {
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .f-top {
-      grid-template-columns: minmax(0, 1fr);
-      gap: 28px;
-    }
-    .f-bot {
-      flex-direction: column;
-      gap: 8px;
-      text-align: center;
-    }
-  }
-</style>
