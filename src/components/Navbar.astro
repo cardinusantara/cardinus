@@ -1,4 +1,6 @@
 ---
+import EcoNav from './EcoNav.astro';
+
 interface Props {
   activeNav?: string;
 }
@@ -7,6 +9,10 @@ const { activeNav = 'home' } = Astro.props;
 ---
 
 <header class="site-header" id="siteHeader">
+  <!-- Tier 1: Ecosystem Micro-Bar -->
+  <EcoNav />
+
+  <!-- Tier 2: Primary Navigation -->
   <div class="wrap nav-in">
     <!-- Brand Logo with New Official Cardi Nusantara Logo -->
     <a class="brand" href="/" aria-label="Cardi Nusantara">

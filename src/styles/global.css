@@ -45,7 +45,8 @@
   --shadow-sm: 0 2px 8px rgba(10, 22, 51, 0.04);
   --shadow-lg: 0 20px 48px rgba(10, 22, 51, 0.12);
   --wrap: 1160px;
-  --nav-h: 80px;
+  --nav-bar-h: 72px;
+  --nav-h: 104px;
   --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --mono: 'IBM Plex Mono', ui-monospace, monospace;
 }
@@ -357,7 +358,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
   display: flex;
   align-items: center;
   gap: 20px;
-  height: var(--nav-h);
+  height: var(--nav-bar-h, 72px);
 }
 
 .brand {
@@ -3161,4 +3162,11 @@ body:not(.is-front) .site-main {
   margin-top: 12px;
   color: var(--body);
   line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --nav-bar-h: 64px;
+    --nav-h: 92px;
+  }
 }

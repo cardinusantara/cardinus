@@ -1,5 +1,4 @@
 ---
-import EcoNav from '../components/EcoNav.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
@@ -69,10 +68,7 @@ const socialImage = ogImage.startsWith("http") ? ogImage : new URL(ogImage, site
     )}
   </head>
   <body>
-    <!-- Top Ecosystem Bar -->
-    <EcoNav />
-
-    <!-- Site Header Navigation -->
+    <!-- Site Header Navigation (Two-Tier: EcoNav + Navbar) -->
     <Navbar activeNav={activeNav} />
 
     <!-- Main Page Content -->
