@@ -1,12 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ArticleCard from '../components/ArticleCard.astro';
-import { getCollection } from 'astro:content';
-
-const posts = await getCollection('blog');
-const latestPosts = posts
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
 ---
 
 <BaseLayout
@@ -550,312 +543,407 @@ const latestPosts = posts
   </div>
  </section>
  <!-- INDUSTRIES SECTION -->
- <section class="section soft reveal" id="industries">
-  <div class="wrap">
-   <div class="eyebrow">
-    // Industri yang Kami Tangani
+  <section class="section soft reveal" id="industries">
+   <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">// Industri yang Kami Tangani</div>
+      <h2>GTM partner lintas industri.</h2>
+      <p class="lead" style="margin: 12px auto 40px; max-width: 680px;">
+        Dari travel &amp; umroh sampai fintech — arsitektur strategi yang sama, dispesifikasikan sesuai regulasi dan karakter tiap industri.
+      </p>
+    </div>
+
+    <div class="ind-grid">
+      <!-- 1. Travel & Umroh -->
+      <div class="ind-card">
+        <div class="ind-head">
+          <div class="ind-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 2L11 13"></path>
+              <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+            </svg>
+          </div>
+          <div>
+            <h5>Travel &amp; Umroh</h5>
+            <span class="ind-tag">GTM Solution</span>
+          </div>
+        </div>
+        <ul class="ind-list">
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Kelola data jamaah &amp; manifest</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Follow-up otomatis prospek keberangkatan</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Broadcast paket via WhatsApp Business</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2. Beauty & Klinik -->
+      <div class="ind-card">
+        <div class="ind-head">
+          <div class="ind-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"></path>
+            </svg>
+          </div>
+          <div>
+            <h5>Beauty &amp; Klinik</h5>
+            <span class="ind-tag">GTM Solution</span>
+          </div>
+        </div>
+        <ul class="ind-list">
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Booking treatment online real-time</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Reminder jadwal konsultasi dokter</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Loyalitas pelanggan &amp; repeat visit</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3. Finance & Asuransi -->
+      <div class="ind-card">
+        <div class="ind-head">
+          <div class="ind-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="M9 12l2 2 4-4"></path>
+            </svg>
+          </div>
+          <div>
+            <h5>Finance &amp; Asuransi</h5>
+            <span class="ind-tag">GTM Solution</span>
+          </div>
+        </div>
+        <ul class="ind-list">
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Lead qualification &amp; credit scoring</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Nurturing nasabah prioritas</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Telesales terintegrasi &amp; recording</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 4. Edukasi -->
+      <div class="ind-card">
+        <div class="ind-head">
+          <div class="ind-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+          </div>
+          <div>
+            <h5>Edukasi</h5>
+            <span class="ind-tag">GTM Solution</span>
+          </div>
+        </div>
+        <ul class="ind-list">
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Pendaftaran mahasiswa baru (PMB)</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Notifikasi akademik &amp; portal wali</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Komunikasi alumni via WA &amp; Email</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 5. Otomotif -->
+      <div class="ind-card">
+        <div class="ind-head">
+          <div class="ind-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M12 12l3-5"></path>
+              <path d="M7 16h10"></path>
+            </svg>
+          </div>
+          <div>
+            <h5>Otomotif</h5>
+            <span class="ind-tag">GTM Solution</span>
+          </div>
+        </div>
+        <ul class="ind-list">
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Jadwal test drive &amp; booking servis</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Reminder berkala servis &amp; oli</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Upsell suku cadang &amp; aksesori</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 6. ISP / Telco -->
+      <div class="ind-card">
+        <div class="ind-head">
+          <div class="ind-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.93 4.93a10 10 0 0 1 14.14 0"></path>
+              <path d="M7.76 7.76a6 6 0 0 1 8.48 0"></path>
+              <circle cx="12" cy="12" r="2"></circle>
+              <path d="M12 14v8"></path>
+            </svg>
+          </div>
+          <div>
+            <h5>ISP / Telco</h5>
+            <span class="ind-tag">GTM Solution</span>
+          </div>
+        </div>
+        <ul class="ind-list">
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Tiket gangguan otomatis &amp; SLA</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Notifikasi jatuh tempo tagihan</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Retensi pelanggan &amp; paket upgrade</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 7. Kesehatan -->
+      <div class="ind-card">
+        <div class="ind-head">
+          <div class="ind-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="16" rx="3"></rect>
+              <path d="M12 8v8"></path>
+              <path d="M8 12h8"></path>
+            </svg>
+          </div>
+          <div>
+            <h5>Kesehatan</h5>
+            <span class="ind-tag">GTM Solution</span>
+          </div>
+        </div>
+        <ul class="ind-list">
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Reminder jadwal donor &amp; kontrol</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Edukasi preventif pasien terarah</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Koordinasi rujukan antar unit cepat</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 8. Dealer Mobil -->
+      <div class="ind-card">
+        <div class="ind-head">
+          <div class="ind-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2 10.9 2 11.2 2 11.5V16c0 .6.4 1 1 1h2"></path>
+              <circle cx="7" cy="17" r="2"></circle>
+              <circle cx="17" cy="17" r="2"></circle>
+            </svg>
+          </div>
+          <div>
+            <h5>Dealer Mobil</h5>
+            <span class="ind-tag">GTM Solution</span>
+          </div>
+        </div>
+        <ul class="ind-list">
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Manajemen lead walk-in showroom</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Follow-up negosiasi SPK &amp; leasing</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Broadcast promo unit &amp; trade-in</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 9. Rental Mobil -->
+      <div class="ind-card">
+        <div class="ind-head">
+          <div class="ind-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <circle cx="12" cy="16" r="2"></circle>
+            </svg>
+          </div>
+          <div>
+            <h5>Rental Mobil</h5>
+            <span class="ind-tag">GTM Solution</span>
+          </div>
+        </div>
+        <ul class="ind-list">
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Booking &amp; deposit sewa otomatis</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Reminder serah terima &amp; overtime</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Upsell armada via broadcast WhatsApp</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 10. Kontraktor & Properti -->
+      <div class="ind-card">
+        <div class="ind-head">
+          <div class="ind-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 20h20"></path>
+              <path d="M5 20V8l7-5 7 5v12"></path>
+              <rect x="9" y="12" width="6" height="8"></rect>
+            </svg>
+          </div>
+          <div>
+            <h5>Kontraktor &amp; Properti</h5>
+            <span class="ind-tag">GTM Solution</span>
+          </div>
+        </div>
+        <ul class="ind-list">
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Kualifikasi leads proyek &amp; tender</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Follow-up progres RAB &amp; penawaran</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Koordinasi tim arsitek &amp; lapangan</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 11. Healthcare & Lab -->
+      <div class="ind-card">
+        <div class="ind-head">
+          <div class="ind-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              <path d="M7 12h3l2-3 2 6 2-3h2"></path>
+            </svg>
+          </div>
+          <div>
+            <h5>Healthcare &amp; Lab</h5>
+            <span class="ind-tag">GTM Solution</span>
+          </div>
+        </div>
+        <ul class="ind-list">
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Appointment MCU &amp; antrean pasien</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Pengiriman hasil lab otomatis aman</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Riwayat rekam medis terintegrasi</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 12. Pemerintah & BUMN -->
+      <div class="ind-card">
+        <div class="ind-head">
+          <div class="ind-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21h18"></path>
+              <path d="M5 21V10"></path>
+              <path d="M19 21V10"></path>
+              <path d="M9 21V10"></path>
+              <path d="M15 21V10"></path>
+              <path d="M2 10h20L12 3z"></path>
+            </svg>
+          </div>
+          <div>
+            <h5>Pemerintah &amp; BUMN</h5>
+            <span class="ind-tag">GTM Solution</span>
+          </div>
+        </div>
+        <ul class="ind-list">
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Sistem pengaduan warga terintegrasi</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Diseminasi informasi publik multi-kanal</span>
+          </li>
+          <li>
+            <svg class="ind-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Monitoring indeks kepuasan layanan</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Additional Industries Banner -->
+    <div class="ind-more-bar">
+      <div class="ind-more-label">
+        <span class="ind-more-dot"></span>
+        <span>Juga Mendukung 25+ Sektor Lainnya:</span>
+      </div>
+      <div class="ind-chips">
+        <span class="ind-chip"><b>Manufaktur</b> — Distributor &amp; Supply Chain</span>
+        <span class="ind-chip"><b>Non-Profit &amp; NGO</b> — Relawan &amp; Donasi</span>
+        <span class="ind-chip"><b>Ritel &amp; E-Commerce</b> — Omnichannel Inbox</span>
+        <span class="ind-chip"><b>Professional Service</b> — B2B Sales Pipeline</span>
+        <span class="ind-chip"><b>Hospitality &amp; Hotel</b> — Direct Booking Engine</span>
+      </div>
+    </div>
    </div>
-   <h2>
-    GTM partner lintas industri.
-   </h2>
-   <p class="lead" style="margin:12px 0 40px;">
-    Dari travel &amp; umroh sampai fintech — sistem yang sama, disesuaikan per industri.
-   </p>
-   <div class="ind-grid">
-    <div class="ind-card">
-     <div class="ind-top">
-      <span class="ind-emoji">
-       🕌
-      </span>
-      <h5>
-       Travel &amp; Umroh
-      </h5>
-     </div>
-     <ul>
-      <li>
-       Kelola data jamaah
-      </li>
-      <li>
-       Follow-up otomatis
-      </li>
-      <li>
-       Broadcast paket via WhatsApp
-      </li>
-     </ul>
-    </div>
-    <div class="ind-card">
-     <div class="ind-top">
-      <span class="ind-emoji">
-       💄
-      </span>
-      <h5>
-       Beauty &amp; Klinik
-      </h5>
-     </div>
-     <ul>
-      <li>
-       Booking online
-      </li>
-      <li>
-       Reminder treatment
-      </li>
-      <li>
-       Loyalitas pelanggan otomatis
-      </li>
-     </ul>
-    </div>
-    <div class="ind-card">
-     <div class="ind-top">
-      <span class="ind-emoji">
-       💰
-      </span>
-      <h5>
-       Finance &amp; Asuransi
-      </h5>
-     </div>
-     <ul>
-      <li>
-       Lead scoring
-      </li>
-      <li>
-       Nurturing nasabah
-      </li>
-      <li>
-       Telesales dengan rekaman panggilan
-      </li>
-     </ul>
-    </div>
-    <div class="ind-card">
-     <div class="ind-top">
-      <span class="ind-emoji">
-       🎓
-      </span>
-      <h5>
-       Edukasi
-      </h5>
-     </div>
-     <ul>
-      <li>
-       PMB otomatis
-      </li>
-      <li>
-       Update orang tua
-      </li>
-      <li>
-       Komunikasi alumni via WA &amp; email
-      </li>
-     </ul>
-    </div>
-    <div class="ind-card">
-     <div class="ind-top">
-      <span class="ind-emoji">
-       🚗
-      </span>
-      <h5>
-       Otomotif
-      </h5>
-     </div>
-     <ul>
-      <li>
-       Test drive &amp; servis
-      </li>
-      <li>
-       Reminder servis
-      </li>
-      <li>
-       Upsell aksesori via broadcast
-      </li>
-     </ul>
-    </div>
-    <div class="ind-card">
-     <div class="ind-top">
-      <span class="ind-emoji">
-       📡
-      </span>
-      <h5>
-       ISP / Telco
-      </h5>
-     </div>
-     <ul>
-      <li>
-       Tiket gangguan otomatis
-      </li>
-      <li>
-       Notifikasi tagihan
-      </li>
-      <li>
-       Retensi pelanggan
-      </li>
-     </ul>
-    </div>
-    <div class="ind-card">
-     <div class="ind-top">
-      <span class="ind-emoji">
-       🏥
-      </span>
-      <h5>
-       Kesehatan
-      </h5>
-     </div>
-     <ul>
-      <li>
-       Reminder jadwal donor
-      </li>
-      <li>
-       Edukasi pasien
-      </li>
-      <li>
-       Koordinasi rujukan antar unit
-      </li>
-     </ul>
-    </div>
-    <div class="ind-card">
-     <div class="ind-top">
-      <span class="ind-emoji">
-       🚙
-      </span>
-      <h5>
-       Dealer Mobil
-      </h5>
-     </div>
-     <ul>
-      <li>
-       Manajemen lead showroom
-      </li>
-      <li>
-       Follow-up test drive
-      </li>
-      <li>
-       Broadcast promo via WhatsApp
-      </li>
-     </ul>
-    </div>
-    <div class="ind-card">
-     <div class="ind-top">
-      <span class="ind-emoji">
-       🚕
-      </span>
-      <h5>
-       Rental Mobil
-      </h5>
-     </div>
-     <ul>
-      <li>
-       Booking otomatis
-      </li>
-      <li>
-       Reminder pengembalian
-      </li>
-      <li>
-       Upsell armada via WhatsApp
-      </li>
-     </ul>
-    </div>
-    <div class="ind-card">
-     <div class="ind-top">
-      <span class="ind-emoji">
-       🏗️
-      </span>
-      <h5>
-       Kontraktor
-      </h5>
-     </div>
-     <ul>
-      <li>
-       Leads proyek
-      </li>
-      <li>
-       Follow-up klien otomatis
-      </li>
-      <li>
-       Koordinasi tim lapangan
-      </li>
-     </ul>
-    </div>
-    <div class="ind-card">
-     <div class="ind-top">
-      <span class="ind-emoji">
-       ❤️
-      </span>
-      <h5>
-       Healthcare
-      </h5>
-     </div>
-     <ul>
-      <li>
-       Appointment pasien
-      </li>
-      <li>
-       Reminder otomatis
-      </li>
-      <li>
-       Riwayat komunikasi terpusat
-      </li>
-     </ul>
-    </div>
-    <div class="ind-card">
-     <div class="ind-top">
-      <span class="ind-emoji">
-       🏛️
-      </span>
-      <h5>
-       Pemerintah
-      </h5>
-     </div>
-     <ul>
-      <li>
-       Kelola aduan publik
-      </li>
-      <li>
-       Layanan warga terpusat
-      </li>
-      <li>
-       Monitoring kinerja divisi
-      </li>
-     </ul>
-    </div>
-   </div>
-   <div class="ind-more">
-    <span>
-     <b>
-      Manufaktur
-     </b>
-     — pipeline penjualan, order distributor
-    </span>
-    <span>
-     <b>
-      Non-Profit &amp; NGO
-     </b>
-     — kelola donor &amp; relawan
-    </span>
-    <span>
-     <b>
-      Ritel &amp; E-Commerce
-     </b>
-     — inbox terpusat, broadcast promo
-    </span>
-    <span>
-     <b>
-      Professional Service
-     </b>
-     — leads &amp; pipeline proyek
-    </span>
-    <span>
-     <b>
-      Kampus &amp; Universitas
-     </b>
-     — funnel pendaftaran mahasiswa
-    </span>
-    <span>
-     <b>
-      &amp; 25+ industri lainnya
-     </b>
-     — restoran, bank, koperasi, rumah sakit, hotel, apotek, dll.
-    </span>
-   </div>
-  </div>
- </section>
- <!-- CARDI MATRIX FRAMEWORK SECTION -->
+  </section>
+<!-- CARDI MATRIX FRAMEWORK SECTION -->
  <section class="section reveal" id="framework">
   <div class="wrap">
    <div class="eyebrow">
@@ -1464,97 +1552,253 @@ const latestPosts = posts
   </div>
  </section>
  <!-- TRUSTED CLIENTS SECTION -->
- <section class="section soft reveal" id="clients">
-  <div class="wrap">
-   <div class="eyebrow">
-    // Selected Clients
+  <section class="section soft reveal" id="clients">
+   <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">// Selected Clients</div>
+      <h2>Trusted by Brands You Know Well.</h2>
+      <p class="lead" style="margin: 12px auto 36px; max-width: 680px;">
+        200+ brand ternama telah mempercayakan sistem akselerasi GTM kami — dari konglomerasi FMCG global hingga unicorn teknologi.
+      </p>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="client-tabs" id="clientTabs">
+      <button class="client-tab is-active" data-cat="all" type="button">Semua Brand (24)</button>
+      <button class="client-tab" data-cat="fmcg" type="button">FMCG &amp; Retail (6)</button>
+      <button class="client-tab" data-cat="tech" type="button">Tech &amp; Gaming (7)</button>
+      <button class="client-tab" data-cat="beauty" type="button">Beauty &amp; Skincare (6)</button>
+      <button class="client-tab" data-cat="fnb" type="button">F&amp;B &amp; Lifestyle (5)</button>
+    </div>
+
+    <!-- Client Cards Grid -->
+    <div class="client-grid" id="clientGrid">
+      <!-- FMCG -->
+      <div class="client-card" data-cat="fmcg">
+        <div class="client-monogram" style="background: #EEF2FF; color: #1E3A8A;">UL</div>
+        <div class="client-meta">
+          <span class="client-name">Unilever</span>
+          <span class="client-sector">Global FMCG Leader</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="fmcg">
+        <div class="client-monogram" style="background: #EFF6FF; color: #2563EB;">WG</div>
+        <div class="client-meta">
+          <span class="client-name">Wings</span>
+          <span class="client-sector">National FMCG Conglomerate</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="fmcg">
+        <div class="client-monogram" style="background: #FFF7ED; color: #EA580C;">AB</div>
+        <div class="client-meta">
+          <span class="client-name">ABC</span>
+          <span class="client-sector">Heritage Food &amp; Beverage</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="fmcg">
+        <div class="client-monogram" style="background: #FEF3C7; color: #D97706;">MK</div>
+        <div class="client-meta">
+          <span class="client-name">Mama Koko</span>
+          <span class="client-sector">Consumer Food Products</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="fmcg">
+        <div class="client-monogram" style="background: #FDF2F8; color: #EC4899;">GB</div>
+        <div class="client-meta">
+          <span class="client-name">GabaG</span>
+          <span class="client-sector">Maternal &amp; Baby Brand</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="fmcg">
+        <div class="client-monogram" style="background: #F3E8FF; color: #7C3AED;">SR</div>
+        <div class="client-meta">
+          <span class="client-name">Sorex</span>
+          <span class="client-sector">National Apparel &amp; Innerwear</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+
+      <!-- Beauty -->
+      <div class="client-card" data-cat="beauty">
+        <div class="client-monogram" style="background: #FDF2F8; color: #BE185D;">LO</div>
+        <div class="client-meta">
+          <span class="client-name">L'Oréal</span>
+          <span class="client-sector">Global Cosmetics Leader</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="beauty">
+        <div class="client-monogram" style="background: #F0FDF4; color: #16A34A;">GN</div>
+        <div class="client-meta">
+          <span class="client-name">Garnier</span>
+          <span class="client-sector">Botanical Skincare Expert</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="beauty">
+        <div class="client-monogram" style="background: #FAF5FF; color: #9333EA;">MB</div>
+        <div class="client-meta">
+          <span class="client-name">Maybelline</span>
+          <span class="client-sector">Global Color Cosmetics</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="beauty">
+        <div class="client-monogram" style="background: #FDF2F8; color: #DB2777;">ST</div>
+        <div class="client-meta">
+          <span class="client-name">Somethinc</span>
+          <span class="client-sector">D2C Beauty &amp; Skincare</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="beauty">
+        <div class="client-monogram" style="background: #F0FDFA; color: #0D9488;">RX</div>
+        <div class="client-meta">
+          <span class="client-name">Rexona</span>
+          <span class="client-sector">Deodorant &amp; Body Care</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="beauty">
+        <div class="client-monogram" style="background: #F0F9FF; color: #0284C7;">VS</div>
+        <div class="client-meta">
+          <span class="client-name">Vaseline</span>
+          <span class="client-sector">Skin Health &amp; Personal Care</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+
+      <!-- Tech & Telco & Gaming -->
+      <div class="client-card" data-cat="tech">
+        <div class="client-monogram" style="background: #FFE4E6; color: #E11D48;">TS</div>
+        <div class="client-meta">
+          <span class="client-name">Telkomsel</span>
+          <span class="client-sector">Tier-1 Telecommunication</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="tech">
+        <div class="client-monogram" style="background: #ECFDF5; color: #059669;">OP</div>
+        <div class="client-meta">
+          <span class="client-name">Oppo</span>
+          <span class="client-sector">Smart Devices &amp; Technology</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="tech">
+        <div class="client-monogram" style="background: #FEF3C7; color: #D97706;">PG</div>
+        <div class="client-meta">
+          <span class="client-name">PUBG Mobile</span>
+          <span class="client-sector">Global Esports &amp; Gaming</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="tech">
+        <div class="client-monogram" style="background: #F0F9FF; color: #0284C7;">HL</div>
+        <div class="client-meta">
+          <span class="client-name">hololive</span>
+          <span class="client-sector">Virtual Entertainment &amp; VTuber</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="tech">
+        <div class="client-monogram" style="background: #FDF4FF; color: #C026D3;">LG</div>
+        <div class="client-meta">
+          <span class="client-name">LG</span>
+          <span class="client-sector">Electronics &amp; Smart Appliances</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="tech">
+        <div class="client-monogram" style="background: #EEF2FF; color: #4F46E5;">IX</div>
+        <div class="client-meta">
+          <span class="client-name">Infinix</span>
+          <span class="client-sector">Smartphone &amp; Tech Ecosystem</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="tech">
+        <div class="client-monogram" style="background: #ECFDF5; color: #059669;">GF</div>
+        <div class="client-meta">
+          <span class="client-name">GrabFood</span>
+          <span class="client-sector">On-Demand Food Ecosystem</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+
+      <!-- F&B & Lifestyle -->
+      <div class="client-card" data-cat="fnb">
+        <div class="client-monogram" style="background: #FEF2F2; color: #DC2626;">KF</div>
+        <div class="client-meta">
+          <span class="client-name">KFC</span>
+          <span class="client-sector">Quick-Service Restaurant</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="fnb">
+        <div class="client-monogram" style="background: #FEF3C7; color: #78350F;">MG</div>
+        <div class="client-meta">
+          <span class="client-name">Magnum</span>
+          <span class="client-sector">Premium Confectionery</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="fnb">
+        <div class="client-monogram" style="background: #F0FDF4; color: #15803D;">HN</div>
+        <div class="client-meta">
+          <span class="client-name">Heineken</span>
+          <span class="client-sector">Global Premium Beverage</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="fnb">
+        <div class="client-monogram" style="background: #FEF2F2; color: #B91C1C;">BT</div>
+        <div class="client-meta">
+          <span class="client-name">Bintang</span>
+          <span class="client-sector">National Iconic Beverage</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+      <div class="client-card" data-cat="fnb">
+        <div class="client-monogram" style="background: #F0F9FF; color: #0284C7;">RP</div>
+        <div class="client-meta">
+          <span class="client-name">Republic Padel</span>
+          <span class="client-sector">Sports &amp; Lifestyle Venue</span>
+        </div>
+        <span class="client-badge">✓ GTM</span>
+      </div>
+    </div>
+
+    <!-- Client Metrics Bar -->
+    <div class="client-metrics-bar">
+      <div class="metric-item">
+        <span class="metric-num">200+</span>
+        <span class="metric-lbl">National &amp; Global Brands</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-num">Rp 500M+</span>
+        <span class="metric-lbl">Akumulasi Skala Omzet</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-num">98.4%</span>
+        <span class="metric-lbl">Tingkat Retensi Mitra</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-num">25+</span>
+        <span class="metric-lbl">Kategori Sektor Bisnis</span>
+      </div>
+    </div>
    </div>
-   <h2>
-    Trusted by Brands You Know Well.
-   </h2>
-   <p class="lead" style="margin:12px 0 40px;">
-    200+ brand sudah lewat sistem GTM ini — dari FMCG global, gaming &amp; esports, sampai UMKM yang naik kelas.
-   </p>
-   <div class="logo-grid">
-    <div class="logo-item">
-     Unilever
-    </div>
-    <div class="logo-item">
-     L'Oréal
-    </div>
-    <div class="logo-item">
-     KFC
-    </div>
-    <div class="logo-item">
-     Oppo
-    </div>
-    <div class="logo-item">
-     Telkomsel
-    </div>
-    <div class="logo-item">
-     Wings
-    </div>
-    <div class="logo-item">
-     Vaseline
-    </div>
-    <div class="logo-item">
-     Maybelline
-    </div>
-    <div class="logo-item">
-     Rexona
-    </div>
-    <div class="logo-item">
-     Garnier
-    </div>
-    <div class="logo-item">
-     Magnum
-    </div>
-    <div class="logo-item">
-     Somethinc
-    </div>
-    <div class="logo-item">
-     PUBG Mobile
-    </div>
-    <div class="logo-item">
-     hololive
-    </div>
-    <div class="logo-item">
-     LG
-    </div>
-    <div class="logo-item">
-     Infinix
-    </div>
-    <div class="logo-item">
-     Heineken
-    </div>
-    <div class="logo-item">
-     Bintang
-    </div>
-    <div class="logo-item">
-     ABC
-    </div>
-    <div class="logo-item">
-     GrabFood
-    </div>
-    <div class="logo-item">
-     Republic Padel
-    </div>
-    <div class="logo-item">
-     Mama Koko
-    </div>
-    <div class="logo-item">
-     GabaG
-    </div>
-    <div class="logo-item">
-     Sorex
-    </div>
-   </div>
-   <div class="trusted-foot">
-    200+ National, Multinational &amp; Global Brands
-   </div>
-  </div>
- </section>
- <!-- PORTFOLIO DETAIL SECTION -->
+  </section>
+<!-- PORTFOLIO DETAIL SECTION -->
  <section class="section reveal" id="portfolio">
   <div class="wrap">
    <div class="eyebrow">
@@ -1883,35 +2127,6 @@ const latestPosts = posts
 </main>
 
 
-<!-- ==========================================================================
-     LATEST INSIGHT & ARTIKEL
-     ========================================================================== -->
-<section class="section soft" id="insights">
-  <div class="wrap">
-    <div class="section-head center">
-      <div class="eyebrow">// Insight &amp; Panduan Bisnis</div>
-      <h2>Strategi Brand, Pasar, dan Pertumbuhan.</h2>
-      <p class="lead">
-        Analisis mendalam dari praktisi Cardi Nusantara mengenai riset pasar, periklanan digital, dan ekspansi pasar Indonesia.
-      </p>
-    </div>
-    <div class="grid cols-3" style="margin-top: 36px;">
-      {latestPosts.map((post) => (
-        <ArticleCard
-          title={post.data.title}
-          description={post.data.description}
-          pubDate={post.data.pubDate}
-          slug={post.slug}
-          cover={post.data.cover}
-        />
-      ))}
-    </div>
-    <div style="text-align: center; margin-top: 40px;">
-      <a class="btn btn-outline" href="/blog">Lihat Semua 30 Artikel &rarr;</a>
-    </div>
-  </div>
-</section>
-
 </BaseLayout>
 
 <script>
@@ -1946,4 +2161,28 @@ const latestPosts = posts
       window.open(waUrl, '_blank', 'noopener');
     });
   }
+</script>
+
+<script>
+  // Interactive Client Tabs Filter
+  const clientTabs = document.querySelectorAll('.client-tab');
+  const clientCards = document.querySelectorAll('.client-card');
+
+  clientTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      clientTabs.forEach((t) => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+
+      const targetCat = tab.getAttribute('data-cat');
+      clientCards.forEach((card) => {
+        const cardCat = card.getAttribute('data-cat');
+        if (targetCat === 'all' || cardCat === targetCat) {
+          (card as HTMLElement).style.display = 'flex';
+          (card as HTMLElement).style.opacity = '1';
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
 </script>
