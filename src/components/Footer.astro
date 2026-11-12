@@ -1,5 +1,51 @@
 ---
-// Cardi Nusantara Footer matching live site
+// Cardi Nusantara Footer matching live site with i18n
+interface Props {
+  currentLang?: 'id' | 'en' | 'zh';
+}
+
+const { currentLang = 'id' } = Astro.props;
+
+const copy = {
+  id: {
+    desc: "Membangun perusahaan yang siap pasar dengan AI dan teknologi. Kami mengakuisisi, mengembangkan, dan menyiapkan brand untuk exit bernilai lebih tinggi.",
+    navTitle: "Navigasi",
+    ecoTitle: "Ekosistem",
+    contactTitle: "Kontak",
+    home: "Home",
+    about: "About",
+    blog: "Blog",
+    waUrl: "https://wa.me/62817449760?text=Halo%20Cardi%20Nusantara%21%20Saya%20ingin%20terhubung%20%2F%20konsultasi.",
+    waLabel: "WhatsApp 0817-449-760",
+    copyright: "© 2026 Cardi Nusantara. Seluruh hak cipta dilindungi.",
+  },
+  en: {
+    desc: "Building market-ready enterprises with AI and technology. We acquire, accelerate, and position brands for higher-value exits.",
+    navTitle: "Navigation",
+    ecoTitle: "Ecosystem",
+    contactTitle: "Contact",
+    home: "Home",
+    about: "About",
+    blog: "Blog",
+    waUrl: "https://wa.me/62817449760?text=Hello%20Cardi%20Nusantara!%20I%20would%20like%20to%20inquire%20about%20GTM%20partnership.",
+    waLabel: "WhatsApp +62 817-449-760",
+    copyright: "© 2026 Cardi Nusantara. All rights reserved.",
+  },
+  zh: {
+    desc: "依托 AI 与创新技术打造具备市场竞争力的企业。我们收购、孵化并推动品牌实现更高价值退出。",
+    navTitle: "导航",
+    ecoTitle: "生态系统",
+    contactTitle: "联系方式",
+    home: "首页",
+    about: "关于我们",
+    blog: "博客",
+    waUrl: "https://wa.me/62817449760?text=%E4%BD%A0%E5%A5%BD%EF%BC%8CCardi%20Nusantara%EF%BC%81%E6%88%91%E6%83%B3%E5%92%A8%E8%AF%A2%E5%8D%B0%E5%B0%BC%E5%B8%82%E5%9C%BA%E6%8B%93%E5%B1%95%E5%90%88%E4%BD%9C%E3%80%82",
+    waLabel: "WhatsApp +62 817-449-760",
+    copyright: "© 2026 Cardi Nusantara. 版权所有。",
+  }
+}[currentLang];
+
+const homeHref = currentLang === 'id' ? '/' : `/${currentLang}/`;
 ---
 
 <footer class="site-footer">
@@ -7,7 +53,7 @@
     <div class="f-grid">
       <!-- Brand column -->
       <div class="f-brand">
-        <a class="brand" href="/" aria-label="Cardi Nusantara">
+        <a class="brand" href={homeHref} aria-label="Cardi Nusantara">
           <img 
             alt="Cardi Nusantara" 
             height="44" 
@@ -17,21 +63,21 @@
           />
         </a>
         <p>
-          Membangun perusahaan yang siap pasar dengan AI dan teknologi. Kami mengakuisisi, mengembangkan, dan menyiapkan brand untuk exit bernilai lebih tinggi.
+          {copy.desc}
         </p>
       </div>
 
       <!-- Navigasi -->
       <div class="f-col">
-        <h4>Navigasi</h4>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
+        <h4>{copy.navTitle}</h4>
+        <a href={homeHref}>{copy.home}</a>
+        <a href="/about">{copy.about}</a>
+        <a href="/blog">{copy.blog}</a>
       </div>
 
       <!-- Ekosistem Cardi -->
       <div class="f-col">
-        <h4>Ekosistem</h4>
+        <h4>{copy.ecoTitle}</h4>
         <a href="https://cardi.co.id" rel="noopener" target="_blank">Cardi</a>
         <a href="/" rel="noopener">Cardi Nusantara</a>
         <a href="https://digital.cardinusantara.com" rel="noopener" target="_blank">Cardi Digital</a>
@@ -40,16 +86,16 @@
 
       <!-- Kontak -->
       <div class="f-col">
-        <h4>Kontak</h4>
-        <a href="https://wa.me/62817449760?text=Halo%20Cardi%20Nusantara%21%20Saya%20ingin%20terhubung%20%2F%20konsultasi." rel="noopener" target="_blank">
-          WhatsApp 0817-449-760
+        <h4>{copy.contactTitle}</h4>
+        <a href={copy.waUrl} rel="noopener" target="_blank">
+          {copy.waLabel}
         </a>
       </div>
     </div>
 
     <div class="f-bottom">
       <div>
-        © 2026 Cardi Nusantara. Seluruh hak cipta dilindungi.
+        {copy.copyright}
       </div>
     </div>
   </div>

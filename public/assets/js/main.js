@@ -220,32 +220,93 @@
     updateEco();
   }
 
-  // --- Brand Level Checker ---
+  // --- Brand Level Checker with i18n support ---
   var tabsEl = document.getElementById('lvlTabs');
   var panelEl = document.getElementById('lvlPanel');
   if (tabsEl && panelEl) {
-    var CHANNELS = [
-      { name: 'Konten organik, media sosial, SEO & GBP', unlock: 1 },
-      { name: 'Iklan marketplace (Shopee / Tokopedia)', unlock: 1 },
-      { name: 'Meta Ads (Facebook & Instagram)', unlock: 1 },
-      { name: 'TikTok Ads & Affiliate', unlock: 1 },
-      { name: 'KOL nano-micro', unlock: 1 },
-      { name: 'Google Search Ads & SEM', unlock: 2 },
-      { name: 'YouTube Ads', unlock: 3 },
-      { name: 'KOL macro', unlock: 3 },
-      { name: 'Distribusi retail offline (GT/MT)', unlock: 3 },
-      { name: 'Artis / mega endorsement (Rp200 jt+)', unlock: 4 },
-      { name: 'OOH / billboard (lokasi ikonik)', unlock: 5 },
-      { name: 'TV & sponsorship besar', unlock: 6, selective: true },
-    ];
+    var curLang = document.documentElement.lang || 'id';
 
-    var LEVELS = [
-      { n: 1, name: 'Validasi', range: '< Rp 1 M/thn', desc: 'Buktikan produk laku & gunakan marketing organic.' },
-      { n: 2, name: 'Growth', range: 'Rp 1–5 M/thn', desc: 'Gunakan ads & scale channel digital yang terbukti profit.' },
-      { n: 3, name: 'Ekspansi', range: 'Rp 5–10 M/thn', desc: 'Multi-channel & mulai masuk distribusi offline.' },
-      { n: 4, name: 'Brand Building', range: 'Rp 20–100 M/thn', desc: 'Awareness nasional: artis, KOL & OOH selektif.' },
-      { n: 5, name: 'Market Leader', range: 'Rp 100+ M/thn', desc: 'Top of mind: TV, YouTube & premium spot OOH.' },
-    ];
+    var I18N_DATA = {
+      id: {
+        selectiveLabel: ' (selektif)',
+        footNote: '<b>Syarat naik level:</b> ROAS stable + omzet terus naik.',
+        levels: [
+          { n: 1, name: 'Validasi', range: '< Rp 1 M/thn', desc: 'Buktikan produk laku & gunakan marketing organic.' },
+          { n: 2, name: 'Growth', range: 'Rp 1–5 M/thn', desc: 'Gunakan ads & scale channel digital yang terbukti profit.' },
+          { n: 3, name: 'Ekspansi', range: 'Rp 5–10 M/thn', desc: 'Multi-channel & mulai masuk distribusi offline.' },
+          { n: 4, name: 'Brand Building', range: 'Rp 20–100 M/thn', desc: 'Awareness nasional: artis, KOL & OOH selektif.' },
+          { n: 5, name: 'Market Leader', range: 'Rp 100+ M/thn', desc: 'Top of mind: TV, YouTube & premium spot OOH.' },
+        ],
+        channels: [
+          { name: 'Konten organik, media sosial, SEO & GBP', unlock: 1 },
+          { name: 'Iklan marketplace (Shopee / Tokopedia)', unlock: 1 },
+          { name: 'Meta Ads (Facebook & Instagram)', unlock: 1 },
+          { name: 'TikTok Ads & Affiliate', unlock: 1 },
+          { name: 'KOL nano-micro', unlock: 1 },
+          { name: 'Google Search Ads & SEM', unlock: 2 },
+          { name: 'YouTube Ads', unlock: 3 },
+          { name: 'KOL macro', unlock: 3 },
+          { name: 'Distribusi retail offline (GT/MT)', unlock: 3 },
+          { name: 'Artis / mega endorsement (Rp200 jt+)', unlock: 4 },
+          { name: 'OOH / billboard (lokasi ikonik)', unlock: 5 },
+          { name: 'TV & sponsorship besar', unlock: 6, selective: true },
+        ]
+      },
+      en: {
+        selectiveLabel: ' (selective)',
+        footNote: '<b>Requirement to level up:</b> Stable ROAS + sustained revenue growth.',
+        levels: [
+          { n: 1, name: 'Validation', range: '< $65K / yr', desc: 'Prove product-market fit & leverage organic marketing.' },
+          { n: 2, name: 'Growth', range: '$65K–$320K / yr', desc: 'Deploy paid ads & scale profitable digital channels.' },
+          { n: 3, name: 'Expansion', range: '$320K–$650K / yr', desc: 'Multi-channel operations & begin offline retail distribution.' },
+          { n: 4, name: 'Brand Building', range: '$1.3M–$6.5M / yr', desc: 'National brand awareness: top creators, tier-1 influencers & selective OOH.' },
+          { n: 5, name: 'Market Leader', range: '$6.5M+ / yr', desc: 'Top-of-mind category leader: TV, YouTube & prime OOH billboards.' },
+        ],
+        channels: [
+          { name: 'Organic content, social media, SEO & GBP', unlock: 1 },
+          { name: 'Marketplace ads (Shopee / TikTok / Tokopedia)', unlock: 1 },
+          { name: 'Meta Ads (Facebook & Instagram)', unlock: 1 },
+          { name: 'TikTok Ads & Affiliate Network', unlock: 1 },
+          { name: 'Nano & micro KOL creator network', unlock: 1 },
+          { name: 'Google Search Ads & SEM', unlock: 2 },
+          { name: 'YouTube Ads & Video campaigns', unlock: 3 },
+          { name: 'Macro KOL partnerships', unlock: 3 },
+          { name: 'Offline retail distribution (GT/MT)', unlock: 3 },
+          { name: 'Celebrity & mega endorsements', unlock: 4 },
+          { name: 'OOH / Iconic billboard placements', unlock: 5 },
+          { name: 'TV commercials & major sponsorships', unlock: 6, selective: true },
+        ]
+      },
+      zh: {
+        selectiveLabel: ' (精选)',
+        footNote: '<b>晋级标准：</b>稳定 ROAS + 营收持续增长。',
+        levels: [
+          { n: 1, name: '验证期', range: '< 50万人民币/年', desc: '验证产品市场需求，发力有机内容营销。' },
+          { n: 2, name: '成长期', range: '50万–250万人民币/年', desc: '启动效果广告，规模化拓展盈利数字渠道。' },
+          { n: 3, name: '扩张期', range: '250万–500万人民币/年', desc: '全渠道运营，拓展线下分销网络。' },
+          { n: 4, name: '品牌期', range: '1000万–5000万人民币/年', desc: '全国级知名度：顶级博主、明星代言与精选户外大屏。' },
+          { n: 5, name: '领导期', range: '5000万以上人民币/年', desc: '品类心智占领：电视、YouTube 与核心地标广告。' },
+        ],
+        channels: [
+          { name: '有机内容运营、社媒、SEO 与本地搜索', unlock: 1 },
+          { name: '电商平台广告 (Shopee / TikTok / Tokopedia)', unlock: 1 },
+          { name: 'Meta Ads 效果广告 (Facebook 与 Instagram)', unlock: 1 },
+          { name: 'TikTok 广告与达人分销网络', unlock: 1 },
+          { name: 'Nano 与 Micro 达人种草', unlock: 1 },
+          { name: 'Google 搜索广告与搜索营销 (SEM)', unlock: 2 },
+          { name: 'YouTube 品牌视频广告', unlock: 3 },
+          { name: 'Macro 头部达人深度合作', unlock: 3 },
+          { name: '线下渠道分销 (传统与现代零售网络)', unlock: 3 },
+          { name: '明星代言与超头部合作', unlock: 4 },
+          { name: '地标户外广告 (OOH)', unlock: 5 },
+          { name: '电视媒体与重大战略赞助', unlock: 6, selective: true },
+        ]
+      }
+    };
+
+    var activeLangData = I18N_DATA[curLang] || I18N_DATA.id;
+    var LEVELS = activeLangData.levels;
+    var CHANNELS = activeLangData.channels;
 
     function esc(str) {
       var div = document.createElement('div');
@@ -279,20 +340,20 @@
         var cls = unlocked ? 'ch-item unlocked' : (c.selective ? 'ch-item selective' : 'ch-item');
         return (
           '<div class="' + cls + '"><span class="ch-dot"></span><span class="label">' +
-          esc(c.name) + (c.selective ? ' (selektif)' : '') + '</span></div>'
+          esc(c.name) + (c.selective ? activeLangData.selectiveLabel : '') + '</span></div>'
         );
       }).join('');
 
       panelEl.innerHTML =
         '<div class="lvl-panel-top">' +
         '<div>' +
-        '<div class="lvl-name">Level ' + lvl.n + ' — <span>' + esc(lvl.name) + '</span></div>' +
+        '<div class="lvl-name">Level ' + lvl.n + ': <span>' + esc(lvl.name) + '</span></div>' +
         '<div class="lvl-desc">' + esc(lvl.desc) + '</div>' +
         '</div>' +
         '<div class="lvl-range-badge">' + esc(lvl.range) + '</div>' +
         '</div>' +
         '<div class="channel-list">' + chHtml + '</div>' +
-        '<div class="lvl-foot"><b>Syarat naik level:</b> ROAS stable + omzet terus naik.</div>';
+        '<div class="lvl-foot">' + activeLangData.footNote + '</div>';
     }
 
     renderTabs(1);

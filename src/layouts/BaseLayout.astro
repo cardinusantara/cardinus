@@ -10,6 +10,7 @@ interface Props {
   activeNav?: string;
   ogImage?: string;
   articleJsonLd?: object;
+  lang?: 'id' | 'en' | 'zh';
 }
 
 const {
@@ -19,21 +20,34 @@ const {
   activeNav = 'home',
   ogImage = "/logos/nusantara/logo-nusantara-light.png",
   articleJsonLd,
+  lang = (Astro.url.pathname.startsWith('/en') ? 'en' : Astro.url.pathname.startsWith('/zh') ? 'zh' : 'id') as 'id' | 'en' | 'zh',
 } = Astro.props;
 
 const siteUrl = "https://cardinusantara.com";
 const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
 const socialImage = ogImage.startsWith("http") ? ogImage : new URL(ogImage, siteUrl).href;
+
+const waFloatUrl = {
+  id: "https://wa.me/62817449760?text=Halo%20Cardi%20Nusantara%21%20Saya%20ingin%20terhubung%20%2F%20konsultasi.",
+  en: "https://wa.me/62817449760?text=Hello%20Cardi%20Nusantara!%20I%20would%20like%20to%20inquire%20about%20GTM%20partnership.",
+  zh: "https://wa.me/62817449760?text=%E4%BD%A0%E5%A5%BD%EF%BC%8CCardi%20Nusantara%EF%BC%81%E6%88%91%E6%83%B3%E5%92%A8%E8%AF%A2%E5%8D%B0%E5%B0%BC%E5%B8%82%E5%9C%BA%E6%8B%93%E5%B1%95%E5%90%88%E4%BD%9C%E3%80%82"
+}[lang];
 ---
 
 <!doctype html>
-<html lang="id">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+
+    <!-- International SEO hreflang tags -->
+    <link rel="alternate" hreflang="id" href="https://cardinusantara.com/" />
+    <link rel="alternate" hreflang="en" href="https://cardinusantara.com/en/" />
+    <link rel="alternate" hreflang="zh" href="https://cardinusantara.com/zh/" />
+    <link rel="alternate" hreflang="x-default" href="https://cardinusantara.com/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -69,7 +83,7 @@ const socialImage = ogImage.startsWith("http") ? ogImage : new URL(ogImage, site
   </head>
   <body>
     <!-- Site Header Navigation (Two-Tier: EcoNav + Navbar) -->
-    <Navbar activeNav={activeNav} />
+    <Navbar activeNav={activeNav} currentLang={lang} />
 
     <!-- Main Page Content -->
     <main id="content">
@@ -77,13 +91,13 @@ const socialImage = ogImage.startsWith("http") ? ogImage : new URL(ogImage, site
     </main>
 
     <!-- Site Footer -->
-    <Footer />
+    <Footer currentLang={lang} />
 
     <!-- Floating WhatsApp CTA -->
     <a 
       aria-label="WhatsApp" 
       class="wa-float" 
-      href="https://wa.me/62817449760?text=Halo%20Cardi%20Nusantara%21%20Saya%20ingin%20terhubung%20%2F%20konsultasi." 
+      href={waFloatUrl} 
       rel="noopener" 
       target="_blank"
     >

@@ -5,6 +5,13 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://cardinusantara.com',
   output: 'static',
-  integrations: [sitemap()]
+  integrations: [sitemap()],
+  i18n: {
+    defaultLocale: 'id',
+    locales: ['id', 'en', 'zh'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  }
 });
 

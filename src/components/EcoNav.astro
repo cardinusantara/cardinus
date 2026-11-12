@@ -1,15 +1,30 @@
 ---
 // Cardi Ecosystem top micro-bar (Tier 1 of Two-Tier Unified Header)
+interface Props {
+  currentLang?: 'id' | 'en' | 'zh';
+}
+
+const { currentLang = 'id' } = Astro.props;
+
+const label = {
+  id: "Bagian dari ekosistem Cardi",
+  en: "Part of the Cardi Ecosystem",
+  zh: "Cardi 商业生态成员",
+}[currentLang];
+
+const homeHref = currentLang === 'id' ? '/' : `/${currentLang}/`;
 ---
 <div class="eco">
   <div class="wrap eco-in">
-    <span class="eco-label">Bagian dari ekosistem Cardi</span>
+    <span class="eco-label">{label}</span>
     <nav aria-label="Ekosistem Cardi">
       <a href="https://cardi.co.id/">Cardi</a>
       <span class="eco-sep">·</span>
-      <a href="/" class="active" aria-current="page">Cardi Nusantara (Saat Ini)</a>
+      <a href={homeHref} class="active" aria-current="page">Cardi Nusantara</a>
       <span class="eco-sep">·</span>
       <a href="https://aiagent.cardi.co.id/" target="_blank" rel="noopener">Cardi Agent</a>
+      <span class="eco-sep">·</span>
+      <a href="https://nfc.cardi.co.id/" target="_blank" rel="noopener">Cardi NFC</a>
       <span class="eco-sep">·</span>
       <a href="https://cardi.co.id/toko/">Toko Cardi</a>
     </nav>

@@ -3,19 +3,55 @@ import EcoNav from './EcoNav.astro';
 
 interface Props {
   activeNav?: string;
+  currentLang?: 'id' | 'en' | 'zh';
 }
 
-const { activeNav = 'home' } = Astro.props;
+const { activeNav = 'home', currentLang = 'id' } = Astro.props;
+
+const navText = {
+  id: {
+    layanan: "Layanan",
+    home: "Home",
+    about: "About",
+    blog: "Blog",
+    contact: "Hubungi Kami",
+    waUrl: "https://wa.me/62817449760?text=Halo%20Cardi%20Nusantara%21%20Saya%20ingin%20terhubung%20%2F%20konsultasi.",
+    brandDesc: "Brand Development & Visual Identity System",
+    digitalDesc: "Scale-up performa iklan & omzet bisnis",
+  },
+  en: {
+    layanan: "Services",
+    home: "Home",
+    about: "About",
+    blog: "Blog",
+    contact: "Contact Us",
+    waUrl: "https://wa.me/62817449760?text=Hello%20Cardi%20Nusantara!%20I%20would%20like%20to%20inquire%20about%20GTM%20partnership.",
+    brandDesc: "Brand Development & Visual Identity System",
+    digitalDesc: "Scale-up ad performance & revenue growth",
+  },
+  zh: {
+    layanan: "业务服务",
+    home: "首页",
+    about: "关于我们",
+    blog: "博客",
+    contact: "联系我们",
+    waUrl: "https://wa.me/62817449760?text=%E4%BD%A0%E5%A5%BD%EF%BC%8CCardi%20Nusantara%EF%BC%81%E6%88%91%E6%83%B3%E5%92%A8%E8%AF%A2%E5%8D%B0%E5%B0%BC%E5%B8%82%E5%9C%BA%E6%8B%93%E5%B1%95%E5%90%88%E4%BD%9C%E3%80%82",
+    brandDesc: "品牌开发与视觉识别系统",
+    digitalDesc: "效果营销与营收规模化增长",
+  }
+}[currentLang];
+
+const homeHref = currentLang === 'id' ? '/' : `/${currentLang}`;
 ---
 
 <header class="site-header" id="siteHeader">
-  <!-- Tier 1: Ecosystem Micro-Bar -->
-  <EcoNav />
+  <!-- Tier 1: Ecosystem Micro-Bar (Only on main home page: ID, EN, ZH) -->
+  {activeNav === 'home' && <EcoNav currentLang={currentLang} />}
 
   <!-- Tier 2: Primary Navigation -->
   <div class="wrap nav-in">
     <!-- Brand Logo with New Official Cardi Nusantara Logo -->
-    <a class="brand" href="/" aria-label="Cardi Nusantara">
+    <a class="brand" href={homeHref} aria-label="Cardi Nusantara">
       <img 
         src="/logos/nusantara/logo-nusantara-dark.png" 
         alt="Cardi Nusantara" 
@@ -29,8 +65,8 @@ const { activeNav = 'home' } = Astro.props;
     <nav class="nav-menu" aria-label="Primary">
       <!-- Dropdown Layanan -->
       <div class="menu-item has-dropdown">
-        <a class="dropdown-trigger" href="#layanan">
-          <span>Layanan</span>
+        <a class="dropdown-trigger" href={`${homeHref}#layanan`}>
+          <span>{navText.layanan}</span>
           <svg class="car" fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12">
             <path d="M6 9l6 6 6-6"></path>
           </svg>
@@ -49,7 +85,7 @@ const { activeNav = 'home' } = Astro.props;
                 <b>Branding</b>
               </span>
             </span>
-            <span class="dDesc">Brand Development &amp; Visual Identity System</span>
+            <span class="dDesc">{navText.brandDesc}</span>
           </a>
           <!-- Item 2: Cardi Digital -->
           <a class="drop-link" href="https://digital.cardinusantara.com/" rel="noopener" target="_blank">
@@ -65,26 +101,26 @@ const { activeNav = 'home' } = Astro.props;
                 <b>Digital Marketing</b>
               </span>
             </span>
-            <span class="dDesc">Scale-up performa iklan &amp; omzet bisnis</span>
+            <span class="dDesc">{navText.digitalDesc}</span>
           </a>
         </div>
       </div>
 
-      <a class={`menu-item ${activeNav === 'home' ? 'is-active' : ''}`} href="/">Home</a>
-      <a class={`menu-item ${activeNav === 'about' ? 'is-active' : ''}`} href="/about">About</a>
-      <a class={`menu-item ${activeNav === 'blog' ? 'is-active' : ''}`} href="/blog">Blog</a>
+      <a class={`menu-item ${activeNav === 'home' ? 'is-active' : ''}`} href={homeHref}>{navText.home}</a>
+      <a class={`menu-item ${activeNav === 'about' ? 'is-active' : ''}`} href="/about">{navText.about}</a>
+      <a class={`menu-item ${activeNav === 'blog' ? 'is-active' : ''}`} href="/blog">{navText.blog}</a>
     </nav>
 
     <!-- Nav Right Controls -->
     <div class="nav-right">
       <div class="lang-switch">
-        <a class="lang-item is-active" href="/" hreflang="id-ID">ID</a>
-        <a class="lang-item" href="/" hreflang="en-US">EN</a>
-        <a class="lang-item" href="/" hreflang="zh-CN">ZH</a>
+        <a class={`lang-item ${currentLang === 'id' ? 'is-active' : ''}`} href="/" hreflang="id-ID">ID</a>
+        <a class={`lang-item ${currentLang === 'en' ? 'is-active' : ''}`} href="/en/" hreflang="en-US">EN</a>
+        <a class={`lang-item ${currentLang === 'zh' ? 'is-active' : ''}`} href="/zh/" hreflang="zh-CN">ZH</a>
       </div>
 
-      <a class="btn btn-accent" href="https://wa.me/62817449760?text=Halo%20Cardi%20Nusantara%21%20Saya%20ingin%20terhubung%20%2F%20konsultasi." rel="noopener" target="_blank">
-        Hubungi Kami
+      <a class="btn btn-accent" href={navText.waUrl} rel="noopener" target="_blank">
+        {navText.contact}
       </a>
 
       <!-- Hamburger Button for Mobile -->
@@ -101,7 +137,7 @@ const { activeNav = 'home' } = Astro.props;
 <div class="mobile-drawer" id="mobileDrawer">
   <div class="mobile-menu-group" id="mobileLayananGroup">
     <button class="mobile-menu-trigger" id="mobileLayananBtn" type="button">
-      <span>Layanan</span>
+      <span>{navText.layanan}</span>
       <svg class="chevron" fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="16">
         <path d="M6 9l6 6 6-6"></path>
       </svg>
@@ -111,23 +147,29 @@ const { activeNav = 'home' } = Astro.props;
         <span class="dLock">
           <b>Cardi Branding</b>
         </span>
-        <small>Brand Development &amp; Visual Identity System</small>
+        <small>{navText.brandDesc}</small>
       </a>
       <a class="mobile-sub-link" href="https://digital.cardinusantara.com/" rel="noopener" target="_blank">
         <span class="dLock">
           <b>Cardi Digital</b>
         </span>
-        <small>Scale-up performa iklan &amp; omzet bisnis</small>
+        <small>{navText.digitalDesc}</small>
       </a>
     </div>
   </div>
 
-  <a class={`menu-item ${activeNav === 'home' ? 'is-active' : ''}`} href="/">Home</a>
-  <a class={`menu-item ${activeNav === 'about' ? 'is-active' : ''}`} href="/about">About</a>
-  <a class={`menu-item ${activeNav === 'blog' ? 'is-active' : ''}`} href="/blog">Blog</a>
+  <a class={`menu-item ${activeNav === 'home' ? 'is-active' : ''}`} href={homeHref}>{navText.home}</a>
+  <a class={`menu-item ${activeNav === 'about' ? 'is-active' : ''}`} href="/about">{navText.about}</a>
+  <a class={`menu-item ${activeNav === 'blog' ? 'is-active' : ''}`} href="/blog">{navText.blog}</a>
+
+  <div class="mobile-lang-row" style="display:flex;gap:10px;padding:14px 16px;border-top:1px solid rgba(255,255,255,0.1);margin-top:12px;">
+    <a class={`lang-item ${currentLang === 'id' ? 'is-active' : ''}`} href="/" style="min-height:44px;min-width:48px;display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;color:white;border:1px solid rgba(255,255,255,0.25);">ID</a>
+    <a class={`lang-item ${currentLang === 'en' ? 'is-active' : ''}`} href="/en/" style="min-height:44px;min-width:48px;display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;color:white;border:1px solid rgba(255,255,255,0.25);">EN</a>
+    <a class={`lang-item ${currentLang === 'zh' ? 'is-active' : ''}`} href="/zh/" style="min-height:44px;min-width:48px;display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;color:white;border:1px solid rgba(255,255,255,0.25);">ZH</a>
+  </div>
 
   <div class="mobile-cta">
-    <a class="btn btn-wa" href="https://wa.me/62817449760?text=Halo%20Cardi%20Nusantara%21%20Saya%20ingin%20terhubung%20%2F%20konsultasi." rel="noopener" target="_blank">
+    <a class="btn btn-wa" href={navText.waUrl} rel="noopener" target="_blank">
       WhatsApp
     </a>
   </div>
