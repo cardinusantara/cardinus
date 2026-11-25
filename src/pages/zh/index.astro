@@ -2070,7 +2070,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
       <div>
        <label>
-        您的姓名 Brand / Perusahaan
+        品牌 / 公司名称
        </label>
        <input name="brand" required="" type="text"/>
       </div>
@@ -2143,16 +2143,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         '*[Inquiry GTM: Cardi Nusantara]*',
         '',
         `👤 *您的姓名:* ${nama}`,
-        `🏢 *Brand/Perusahaan:* ${brand}`,
+        `🏢 *品牌 / 公司名称:* ${brand}`,
         `📧 *Email:* ${email}`,
         `📱 *WhatsApp:* ${wa}`,
         `🎯 *品牌类型:* ${jenis}`,
         '',
-        `💬 *Pesan / Target:*`,
+        `💬 *需求说明 / 目标:*`,
         pesan,
         '',
         '---',
-        'Terkirim via form cardinusantara.com'
+        '通过 cardinusantara.com 表单提交'
       ];
 
       const waUrl = `https://wa.me/62817449760?text=${encodeURIComponent(lines.join('\n'))}`;
